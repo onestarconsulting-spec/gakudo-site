@@ -10,7 +10,1008 @@
     <!-- 正方形ファビコン設定 -->
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
 
+    <!-- Tailwind CSS --><!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GAKU道（がくどう）| 史上最強の自学自習道場で合格をつかみ取れ！</title>
+    <meta name="description" content="完全オンライン、学習計画と進捗管理に特化した道場 GAKU道(がくどう)。自分のコトは、自分で決める! 入会金無料! 1週間無料体験実施中!">
+
+    <!-- 超高精細ベクターファビコン（Retina・4Kでも一切ぼやけないSVG埋め込み） -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23152433'/><circle cx='50' cy='50' r='42' stroke='%23e11d48' stroke-width='4' fill='none'/><text x='50%' y='56%' font-size='56' font-weight='900' font-family='sans-serif' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>道</text></svg>">
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
+
     <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@600;800;900&display=swap" rel="stylesheet">
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            950: '#0b131c',
+                            900: '#152433',
+                            850: '#1b2f44',
+                            800: '#243d57',
+                            700: '#345373',
+                            600: '#4e7191',
+                            100: '#e1ebf2',
+                            50: '#f0f5f9'
+                        },
+                        accent: {
+                            red: '#dc2626',
+                            rose: '#fff1f2',
+                            gold: '#d97706',
+                            amber: '#fffbeb',
+                            blue: '#eff6ff'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        serif: ['"Shippori Mincho"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 文字ポイントを4pt拡大（基準16px → 20px） */
+        html { font-size: 20px; }
+        body { font-family: 'Noto Sans JP', sans-serif; color: #2d3748; letter-spacing: 0.04em; overflow-x: hidden; line-height: 1.8; }
+        .serif { font-family: 'Shippori Mincho', serif; }
+        
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 35px -8px rgba(36, 61, 87, 0.12), 0 8px 16px -4px rgba(0, 0, 0, 0.04);
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #345373;
+            margin-bottom: 1rem;
+        }
+        .section-tag::before, .section-tag::after {
+            content: "";
+            display: inline-block;
+            width: 28px;
+            height: 2px;
+            background-color: #cbd5e1;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc]" id="top">
+
+    <!-- ==================== ヘッダー（ナビ完全撤去・ロゴ＆ボタンのみ） ==================== -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3.5 transition-all duration-300 shadow-xs">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            
+            <!-- ロゴ -->
+            <a href="#top" class="flex items-center hover:opacity-85 transition">
+                <img src="logo.png" alt="GAKU道 ロゴ" class="h-12 md:h-14 w-auto object-contain">
+            </a>
+
+            <!-- 右側アクションボタン -->
+            <div class="flex items-center gap-4">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex text-sm font-bold text-navy-800 hover:text-navy-950 px-3 py-2 transition whitespace-nowrap">
+                    問い合わせ
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="bg-navy-900 hover:bg-navy-800 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wider shadow-md shadow-navy-900/20 hover-lift flex items-center gap-2 whitespace-nowrap">
+                    <i class="fa-solid fa-calendar-check text-xs"></i>
+                    <span>1週間無料体験</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ==================== 1. トップセクション ==================== -->
+    <section class="pt-40 pb-32 px-6 bg-gradient-to-b from-navy-100/60 via-navy-50/30 to-[#f8fafc] border-b border-slate-200/70">
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+            
+            <div data-aos="fade-down">
+                <span class="inline-block bg-white border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs">
+                    塾でもない、家庭教師でもない、新しい学びの形
+                </span>
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100">
+                <div class="inline-block border-2 border-navy-900 bg-white text-navy-900 text-base font-bold px-6 py-1.5 rounded-lg tracking-widest mb-5 shadow-2xs">
+                    自学自習道場
+                </div>
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-navy-950 serif leading-[1.25] tracking-tight">
+                    自分のコトは、自分で決める!
+                </h1>
+            </div>
+
+            <div class="space-y-4 pt-2" data-aos="fade-up" data-aos-delay="200">
+                <p class="text-xl sm:text-2xl text-slate-700 font-medium">
+                    完全オンライン、学習計画と進捗管理に特化した道場
+                </p>
+                <div class="flex justify-center py-2">
+                    <img src="logo.png" alt="GAKU道" class="h-20 md:h-24 w-auto object-contain drop-shadow-xs">
+                </div>
+                <div>
+                    <span class="inline-block bg-red-600 text-white text-sm font-bold px-6 py-1.5 rounded-full shadow-md">
+                        入会金無料!
+                    </span>
+                </div>
+            </div>
+
+            <!-- ボタン枠 -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-center items-center gap-5 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[320px] bg-navy-900 hover:bg-navy-800 text-white font-bold py-4.5 px-9 rounded-2xl shadow-lg shadow-navy-900/25 hover-lift tracking-widest text-base flex items-center justify-center gap-2 whitespace-nowrap">
+                    <span>お試し! 1週間無料体験 実施中!</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[260px] bg-white border-2 border-navy-900 hover:bg-navy-50 text-navy-900 font-bold py-4.5 px-9 rounded-2xl hover-lift tracking-widest text-base flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>問い合わせはこちら</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 2. こんなお悩み、抱えていませんか? ==================== -->
+    <section id="problem" class="py-32 px-6 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="section-tag">Real Voices</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif">
+                    こんなお悩み、抱えていませんか?
+                </h2>
+            </div>
+
+            <div class="space-y-8" data-aos="fade-up" data-aos-delay="100">
+                <!-- 受験生（薄いネイビーブルーの差し色） -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-navy-50/70 border-l-8 border-navy-800 border-t border-r border-b border-slate-200/80 shadow-xs hover-lift">
+                    <h3 class="font-bold text-xl sm:text-2xl text-navy-900 mb-4 flex items-center gap-2.5">
+                        <i class="fa-solid fa-user-graduate text-navy-700"></i>
+                        <span>受験生:</span>
+                    </h3>
+                    <p class="text-slate-800 text-lg sm:text-xl leading-relaxed font-medium pl-2">
+                        「塾や予備校に通っても成果が出ない･･･<br>
+                        自分でやり始めたけど続かない･･･、<br>
+                        でも、受験には本気で取り組みたい!」
+                    </p>
+                </div>
+
+                <div class="text-center text-sm font-bold text-slate-400 tracking-widest">
+                    あるいは、
+                </div>
+
+                <!-- 保護者（温かみのあるアンバーグレーの差し色） -->
+                <div class="p-8 sm:p-10 rounded-3xl bg-amber-50/60 border-l-8 border-amber-600 border-t border-r border-b border-slate-200/80 shadow-xs hover-lift">
+                    <h3 class="font-bold text-xl sm:text-2xl text-amber-950 mb-4 flex items-center gap-2.5">
+                        <i class="fa-solid fa-house-user text-amber-700"></i>
+                        <span>保護者:</span>
+                    </h3>
+                    <p class="text-slate-800 text-lg sm:text-xl leading-relaxed font-medium pl-2">
+                        「ゲームやスマホにばっかり夢中で、<br>
+                        ぜんぜん勉強をしない･･･、<br>
+                        何度言っても言うことを聞かない･･･。」
+                    </p>
+                </div>
+
+                <!-- 解決提示バナー（深みのあるネイビー×ゴールド装飾） -->
+                <div class="mt-10 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-navy-950 via-navy-900 to-navy-850 text-white text-center shadow-xl hover-lift border border-navy-800" data-aos="zoom-in">
+                    <p class="text-2xl sm:text-4xl font-bold serif tracking-wider text-amber-300">
+                        これらを解決するのが「GAKU道」です。
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 3. 拡がるネット依存 ==================== -->
+    <section id="research" class="py-32 px-6 bg-slate-50/80 border-b border-slate-200/70">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">Scientific Research</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-4">
+                    拡がるネット依存
+                </h2>
+                <div class="text-base sm:text-lg font-bold text-slate-600">ネット依存傾向者の割合</div>
+                <!-- 強調カード（ローズピンクの差し色） -->
+                <div class="inline-block mt-3 px-8 py-3 rounded-2xl bg-rose-50 border-2 border-red-300 shadow-xs">
+                    <div class="text-4xl sm:text-5xl font-extrabold text-red-600 serif">
+                        10代･･･24.8%
+                    </div>
+                </div>
+            </div>
+
+            <!-- 画像1：総務省グラフ ＆ 出典（直下配置） -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover-lift space-y-4" data-aos="fade-up" data-aos-delay="100">
+                <img src="graph-net-dependence.png" alt="総務省 令和5年度情報通信メディアの利用時間と情報行動に関する調査 ネット依存傾向者の割合グラフ" class="w-full h-auto object-contain mx-auto rounded-xl">
+                <p class="text-sm text-slate-500 text-right font-medium pt-1">
+                    出典:総務省「令和5年度情報通信メディアの利用時間と情報行動に関する調査」
+                </p>
+            </div>
+
+            <div class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-xs space-y-5" data-aos="fade-up">
+                <h3 class="font-bold text-xl sm:text-2xl text-navy-950 serif border-b border-slate-100 pb-3">ネット依存がもたらす心の不調</h3>
+                <ul class="space-y-3 text-base sm:text-lg text-slate-700 font-medium pl-2">
+                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600"></span>不安や憂うつ</li>
+                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600"></span>イライラ</li>
+                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600"></span>睡眠不足や生活のリズムの乱れ</li>
+                </ul>
+                <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
+                    この結果、遅刻や欠席が増えたり、家族・友人とのトラブルが増加したりします。
+                </p>
+                <div class="p-6 rounded-2xl bg-rose-50 border-l-8 border-red-600 text-red-700 font-bold text-lg sm:text-xl">
+                    そして･･･<br>
+                    学力も低下します。
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 4. 学力への影響 ==================== -->
+    <section class="py-32 px-6 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">Academic Correlation</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif">
+                    学力への影響
+                </h2>
+            </div>
+
+            <div class="space-y-5 text-base sm:text-xl text-slate-700 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                    近年、仙台市は東北大学と連携して、スマホやネット環境が学習意欲に与える影響について研究を進めています。グラフは、仙台市標準学力検査の中学生の数学の平均点と平日1日あたりの通信アプリの使用時間との関係について示したものです。
+                </p>
+                <p class="bg-navy-50/70 p-5 rounded-2xl border-l-4 border-navy-700 text-navy-950 font-bold">
+                    GAKU道では、これらの研究結果も踏まえた学習コンサルティングを2017年よりおこなっています。
+                </p>
+            </div>
+
+            <!-- 画像2：仙台市グラフ -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover-lift space-y-4" data-aos="fade-up" data-aos-delay="200">
+                <img src="graph-sendai-math.png" alt="仙台市 平成26年度学習意欲の科学的研究に関するプロジェクト 数学平均点グラフ" class="w-full h-auto object-contain mx-auto rounded-xl">
+                <p class="text-sm text-slate-500 text-right font-medium pt-1">
+                    出典:仙台市「平成26年度学習意欲の科学的研究に関するプロジェクト」
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 5. 道場の特徴 ＆ 期待効果 ==================== -->
+    <section id="features" class="py-32 px-6 bg-slate-50/80 border-b border-slate-200/70">
+        <div class="max-w-6xl mx-auto">
+            
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                
+                <!-- 道場の特徴（ネイビー基調の引き締めデザイン） -->
+                <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-sm hover-lift flex flex-col justify-between" data-aos="fade-right">
+                    <div>
+                        <div class="section-tag mb-3">Features</div>
+                        <h3 class="text-3xl font-extrabold text-navy-950 serif mb-4">道場の特徴</h3>
+                        <div class="mb-6">
+                            <span class="text-base font-bold text-navy-900 bg-navy-100/70 py-2.5 px-4 rounded-xl inline-block border border-navy-200">
+                                「学習計画」と「進捗管理」に特化
+                            </span>
+                        </div>
+                        <div class="space-y-4 text-base sm:text-lg font-bold text-slate-800">
+                            <div class="p-4 rounded-2xl bg-navy-50/50 border border-navy-100 flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex items-center justify-center text-xs">✔</span>
+                                <span>1 授業はしない</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-navy-50/50 border border-navy-100 flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex items-center justify-center text-xs">✔</span>
+                                <span>2 教材も計画も自分で決める</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-navy-50/50 border border-navy-100 flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex items-center justify-center text-xs">✔</span>
+                                <span>3 一冊ずつ完璧に仕上げる</span>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-navy-50/50 border border-navy-100 flex items-center gap-3">
+                                <span class="w-7 h-7 rounded-full bg-navy-800 text-white flex items-center justify-center text-xs">✔</span>
+                                <span>4 オンラインで毎日報告する</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 期待効果（ブルー系のタイル差し色） -->
+                <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-sm hover-lift flex flex-col justify-between" data-aos="fade-left">
+                    <div>
+                        <div class="section-tag mb-3">Benefits</div>
+                        <h3 class="text-3xl font-extrabold text-navy-950 serif mb-6">期待効果</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base sm:text-lg font-medium text-slate-800">
+                            <li class="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-700"></span>・学習進度の早さ
+                            </li>
+                            <li class="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-700"></span>・時間短縮
+                            </li>
+                            <li class="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-700"></span>・低コスト
+                            </li>
+                            <li class="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-700"></span>・知識定着度の高さ
+                            </li>
+                            <li class="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-700"></span>・決断力の向上
+                            </li>
+                            <li class="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-700"></span>・自己管理能力の向上
+                            </li>
+                            <li class="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-700"></span>・ネット依存脱却
+                            </li>
+                            <li class="p-4 rounded-2xl bg-blue-50/60 border border-blue-100 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-navy-700"></span>・親子関係の改善
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 6. ご支援の流れ ＆ サボれません! ==================== -->
+    <section id="flow" class="py-32 px-6 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">Process</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-4">
+                    ご支援の流れ
+                </h2>
+            </div>
+
+            <!-- 4ステップ（各カードにネイビーのヘッダーバッジ） -->
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5" data-aos="fade-up" data-aos-delay="100">
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center hover-lift">
+                    <div class="serif text-3xl font-extrabold text-navy-800 mb-2">1.</div>
+                    <p class="text-base sm:text-lg font-bold text-navy-950">現状についてヒヤリングをする</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center hover-lift">
+                    <div class="serif text-3xl font-extrabold text-navy-800 mb-2">2.</div>
+                    <p class="text-base sm:text-lg font-bold text-navy-950">目標・やること・期限を決める</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center hover-lift">
+                    <div class="serif text-3xl font-extrabold text-navy-800 mb-2">3.</div>
+                    <p class="text-base sm:text-lg font-bold text-navy-950">学習計画を立てる</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center hover-lift">
+                    <div class="serif text-3xl font-extrabold text-navy-800 mb-2">4.</div>
+                    <p class="text-base sm:text-lg font-bold text-navy-950">計画通りに実行する</p>
+                </div>
+            </div>
+
+            <!-- 黒板メッセージ（サボれません!） -->
+            <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-navy-850 text-white shadow-xl hover-lift space-y-6 border border-navy-800" data-aos="zoom-in">
+                <h3 class="text-3xl sm:text-4xl font-bold text-amber-300 serif">
+                    サボれません!
+                </h3>
+                <ul class="space-y-3 text-base sm:text-xl font-medium text-slate-100">
+                    <li>※毎日、実施した内容を画像で報告</li>
+                    <li>※月1回の学習カウンセリング</li>
+                    <li>※計画に無理があれば適宜修正</li>
+                </ul>
+                <p class="text-base sm:text-xl leading-relaxed text-slate-200 pt-2 border-t border-navy-700">
+                    やる内容、目標、計画などは最終的にすべてご本人が決めます。
+                </p>
+                <div class="pt-2">
+                    <span class="inline-block border-2 border-red-500 rounded-full px-7 py-2.5 text-xl sm:text-2xl font-bold text-white tracking-widest bg-red-600/30">
+                        つまり‘有言実行”です。
+                    </span>
+                </div>
+            </div>
+
+            <!-- 自学自習のサイクル PDCAを習慣化する -->
+            <div class="pt-10 space-y-8" data-aos="fade-up">
+                <div class="text-center">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-navy-950 serif">自学自習のサイクル</h3>
+                    <p class="text-base font-bold text-navy-700 tracking-wider mt-1">PDCAを習慣化する</p>
+                </div>
+
+                <!-- 画像3：自学自習手元写真 -->
+                <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover-lift mb-8">
+                    <img src="study-hand.jpg" alt="自学自習で机に向かいペンを走らせる様子" class="w-full h-auto object-cover max-h-[400px]">
+                </div>
+
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-5 text-sm sm:text-base">
+                    <div class="p-6 rounded-2xl bg-white border-t-4 border-navy-800 border-x border-b border-slate-200 shadow-2xs hover-lift">
+                        <span class="font-bold text-navy-700 block mb-1 text-sm">01 Plan</span>
+                        <h4 class="font-bold text-navy-950 text-lg mb-2">学習計画を立てる</h4>
+                        <p class="text-slate-600 leading-relaxed text-sm">問題集や教材を決めて、長期・短期計画を作成します。</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border-t-4 border-navy-800 border-x border-b border-slate-200 shadow-2xs hover-lift">
+                        <span class="font-bold text-navy-700 block mb-1 text-sm">02 Do</span>
+                        <h4 class="font-bold text-navy-950 text-lg mb-2">計画を実行する</h4>
+                        <p class="text-slate-600 leading-relaxed text-sm">計画通りに学習を進めます。</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border-t-4 border-navy-800 border-x border-b border-slate-200 shadow-2xs hover-lift">
+                        <span class="font-bold text-navy-700 block mb-1 text-sm">03 Check</span>
+                        <h4 class="font-bold text-navy-950 text-lg mb-2">進捗を管理する</h4>
+                        <p class="text-slate-600 leading-relaxed text-sm">学習状況を毎日チェックして、遅れがないか確認します。</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border-t-4 border-navy-800 border-x border-b border-slate-200 shadow-2xs hover-lift">
+                        <span class="font-bold text-navy-700 block mb-1 text-sm">04 Action</span>
+                        <h4 class="font-bold text-navy-950 text-lg mb-2">計画を見直す</h4>
+                        <p class="text-slate-600 leading-relaxed text-sm">計画に無理があるようであれば適宜修正していきます。</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 7. 緻密な学習計画 ＆ 日々の報告例 ==================== -->
+    <section id="plan" class="py-32 px-6 bg-slate-50/80 border-b border-slate-200/70">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">Planning Strategy</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-2">
+                    緻密な学習計画
+                </h2>
+                <div class="text-sm font-bold text-navy-800">
+                    GAKU道メソッド*の一部<br>
+                    <span class="text-xs text-slate-400 font-normal">*商標登録予定</span>
+                </div>
+                <p class="text-base sm:text-xl text-slate-700 font-medium mt-4">
+                    当道場では、計画を「時間単位」で立てていき、短期・長期スケジュールを組んでいきます。
+                </p>
+            </div>
+
+            <!-- 画像4：589時間 計画表 -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover-lift" data-aos="fade-up" data-aos-delay="100">
+                <img src="table-589hours.png" alt="緻密な学習計画 GAKU道メソッド 589時間計画表" class="w-full h-auto object-contain mx-auto rounded-xl">
+            </div>
+
+            <div class="text-center p-8 sm:p-10 bg-white rounded-3xl border-2 border-red-200 shadow-xs space-y-4" data-aos="fade-up">
+                <p class="font-bold text-slate-800 text-lg sm:text-xl">未来が見えると、何をすべきかが明確になる。</p>
+                <p class="font-bold text-slate-800 text-lg sm:text-xl">時間を制する者が、受験を制する!</p>
+                <div class="text-3xl sm:text-4xl font-extrabold text-red-600 serif pt-2">
+                    半年で589時間しか勉強できない!!
+                </div>
+            </div>
+
+            <!-- 日々の報告例 -->
+            <div class="pt-10 space-y-8" data-aos="fade-up">
+                <h3 class="text-2xl sm:text-3xl font-bold text-navy-950 serif text-center">
+                    日々の報告例
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    
+                    <!-- 画像5：高校2年生 LINE -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover-lift space-y-4">
+                        <h4 class="font-bold text-lg text-navy-950 border-b border-navy-100 pb-3 flex items-center justify-between">
+                            <span>高校2年生(目標:東北大工学部)</span>
+                            <span class="text-xs bg-navy-100 text-navy-800 px-3 py-1 rounded-full">実例</span>
+                        </h4>
+                        <div class="rounded-2xl overflow-hidden border border-slate-100">
+                            <img src="report-highschool.jpg" alt="高校2年生 日々のLINE報告実例" class="w-full h-auto object-contain mx-auto">
+                        </div>
+                    </div>
+
+                    <!-- 画像6：社会人 LINE -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm hover-lift space-y-4">
+                        <h4 class="font-bold text-lg text-navy-950 border-b border-navy-100 pb-3 flex items-center justify-between">
+                            <span>社会人(目標:マンション管理士)</span>
+                            <span class="text-xs bg-navy-100 text-navy-800 px-3 py-1 rounded-full">実例</span>
+                        </h4>
+                        <div class="rounded-2xl overflow-hidden border border-slate-100">
+                            <img src="report-adult.jpg" alt="社会人 日々のLINE報告実例" class="w-full h-auto object-contain mx-auto">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 8. 選べる3つの指導モード ==================== -->
+    <section id="modes" class="py-32 px-6 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">3 Modes</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif">
+                    選べる3つの指導モード
+                </h2>
+            </div>
+
+            <!-- 3モード説明（各モードの個性に合わせた背景差し色） -->
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+                
+                <!-- 仏（穏やかなアンバー/イエロー差し色） -->
+                <div class="p-8 rounded-3xl bg-amber-50/50 border border-amber-200/80 hover-lift flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <div class="h-32 flex items-center justify-center mb-4">
+                            <img src="mode-hotoke.jpg" alt="仏（ほとけ）イラスト" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <h3 class="text-2xl font-bold text-amber-950 serif mb-3">仏(ほとけ)</h3>
+                        <p class="text-slate-700 leading-relaxed font-medium text-base">
+                            とてもやさしい仏モード。とりあえずやればほめてくれます。
+                        </p>
+                    </div>
+                    <p class="text-sm text-red-600 font-bold mt-6 pt-4 border-t border-amber-200/60">
+                        ※高校生以上は選べません。
+                    </p>
+                </div>
+
+                <!-- ふつう（洗練されたネイビーのハイライト） -->
+                <div class="p-8 rounded-3xl bg-navy-50/70 border-2 border-navy-800 hover-lift flex flex-col justify-between relative shadow-md">
+                    <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-navy-900 text-white text-xs font-bold">
+                        おすすめ
+                    </div>
+                    <div>
+                        <div class="h-32 flex items-center justify-center mb-4">
+                            <img src="mode-futsu.png" alt="ふつうイラスト" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <h3 class="text-2xl font-bold text-navy-950 serif mb-3">ふつう</h3>
+                        <p class="text-slate-700 leading-relaxed font-medium text-base">
+                            最初はこちらがおすすめです。生徒・児童に合うよう伴走していきます。物足りなければ鬼モードへどうぞ。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 鬼（情熱と緊張感のローズ/レッド差し色） -->
+                <div class="p-8 rounded-3xl bg-rose-50/50 border border-rose-200/80 hover-lift flex flex-col justify-between shadow-2xs">
+                    <div>
+                        <div class="h-32 flex items-center justify-center mb-4">
+                            <img src="mode-oni.png" alt="鬼（おに）イラスト" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <h3 class="text-2xl font-bold text-rose-950 serif mb-3">鬼(おに)</h3>
+                        <p class="text-slate-700 leading-relaxed font-medium text-base">
+                            難関校・難関資格を目指す方のほか、三日坊主や誘惑に弱い方にもおすすめです。短期間で、最も効果が上がります。
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 9. 対象者 ＆ こんな方に最適です ==================== -->
+    <section id="target" class="py-32 px-6 bg-slate-50/80 border-b border-slate-200/70">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">Target Profile</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-6">
+                    対象の方は、学生や受験生のみなさん
+                </h2>
+                <div class="flex flex-wrap justify-center gap-3 text-sm sm:text-base font-bold text-navy-950 mb-8">
+                    <span class="px-5 py-2.5 bg-white rounded-full border border-slate-200 shadow-2xs">●小学校中学年~大学受験生（※学校に通っていない方も含む）</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full border border-slate-200 shadow-2xs">●資格取得を目指す大学生・社会人</span>
+                    <span class="px-5 py-2.5 bg-white rounded-full border border-slate-200 shadow-2xs">●外国語学習をしている方</span>
+                </div>
+
+                <!-- 画像10：高校生男女写真 -->
+                <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover-lift">
+                    <img src="students.jpg" alt="学習に取り組む学生のみなさん" class="w-full h-auto object-cover max-h-[420px]">
+                </div>
+            </div>
+
+            <div class="space-y-8 pt-6" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-2xl sm:text-3xl font-bold text-navy-950 serif text-center">
+                    こんな方に最適です
+                </h3>
+
+                <div class="grid md:grid-cols-2 gap-6 text-base">
+                    
+                    <!-- 1 -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover-lift">
+                        <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-2">
+                            <span class="w-8 h-8 rounded-full bg-navy-800 text-white flex items-center justify-center font-bold text-sm">1</span>
+                            <h4 class="font-bold text-lg sm:text-xl text-navy-950">独学者</h4>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 font-medium">
+                            <li>☑ 学習計画は立てるけど、いつも三日坊主で終わる</li>
+                            <li>☑ 自己流で進めた結果、どれもこれも中途半端</li>
+                            <li>☑ モチベーションの波に左右されて、安定しない</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover-lift">
+                        <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-2">
+                            <span class="w-8 h-8 rounded-full bg-navy-800 text-white flex items-center justify-center font-bold text-sm">2</span>
+                            <h4 class="font-bold text-lg sm:text-xl text-navy-950">塾や予備校が合わない</h4>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 font-medium">
+                            <li>☑ ペースが合わなくて置いていかれる or 退屈</li>
+                            <li>☑ 決められた教材・方法が自分に合わない</li>
+                            <li>☑ 高いお金を払っているのに、成果が出ていない</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover-lift">
+                        <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-2">
+                            <span class="w-8 h-8 rounded-full bg-navy-800 text-white flex items-center justify-center font-bold text-sm">3</span>
+                            <h4 class="font-bold text-lg sm:text-xl text-navy-950">親子の関係が良くない</h4>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-bold text-navy-800 mb-1">&lt;子の視点 &gt;</p>
+                                <p class="text-slate-700">☑ 勉強に口出しされるとイライラしてしまう</p>
+                                <p class="text-slate-700">☑ 親の期待が重くて、やる前から苦しくなる</p>
+                            </div>
+                            <div class="pt-3 border-t border-slate-100">
+                                <p class="text-sm font-bold text-navy-800 mb-1">&lt;親の視点&gt;</p>
+                                <p class="text-slate-700">☑ 言わないと勉強しない、成績が上がらない</p>
+                                <p class="text-slate-700">☑ スマホやゲームにばかり時間を使っている</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover-lift">
+                        <div class="flex items-center gap-3 mb-4 border-b border-slate-100 pb-2">
+                            <span class="w-8 h-8 rounded-full bg-navy-800 text-white flex items-center justify-center font-bold text-sm">4</span>
+                            <h4 class="font-bold text-lg sm:text-xl text-navy-950">勉強のやり方がわからない</h4>
+                        </div>
+                        <ul class="space-y-3 text-slate-700 font-medium">
+                            <li>☑ やる気はある!でも、どうすればいいの?</li>
+                            <li>☑ 学校に通ってないので、やり方が分からない</li>
+                            <li>☑ そもそも授業についていけない</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 10. 合格実績 ==================== -->
+    <section class="py-32 px-6 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">Track Record</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-4">
+                    合格実績
+                </h2>
+                <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium">
+                    当道場の方針として、公開しておりません。しかし、<br>
+                    <strong class="text-xl sm:text-2xl text-navy-950 font-extrabold">ほぼ全員が、第一志望の合格をつかみ取っています。</strong>
+                </p>
+                <p class="text-sm text-slate-400 mt-2">※詳細は「問い合わせ・Q&amp;A」をご覧下さい。</p>
+            </div>
+
+            <div class="p-8 sm:p-12 rounded-3xl bg-navy-50/40 border border-navy-100 shadow-sm space-y-8" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="font-bold text-navy-950 text-xl sm:text-2xl serif border-b border-navy-200/80 pb-4">
+                    志望校・資格の例
+                </h3>
+
+                <div class="space-y-8 text-base sm:text-lg">
+                    <div>
+                        <span class="inline-block bg-navy-800 text-white text-sm px-4 py-1 rounded font-bold mb-3 shadow-2xs">学生</span>
+                        <div class="space-y-3 text-slate-700 font-medium pl-1">
+                            <p><strong class="text-navy-950">中学校:</strong> 二華中、青陵中、宮教大附属中、私立各校</p>
+                            <p><strong class="text-navy-950">高校:</strong> 県内ナンバー校、他公立校、私立校、高専</p>
+                            <p><strong class="text-navy-950">大学:</strong> 東北大、他国公立大、早慶、他私大、医歯学科</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-navy-200/80">
+                        <span class="inline-block bg-navy-600 text-white text-sm px-4 py-1 rounded font-bold mb-3 shadow-2xs">社会人</span>
+                        <div class="space-y-3 text-slate-700 font-medium pl-1">
+                            <p><strong class="text-navy-950">国家(公的)資格:</strong> 各士業資格、技能士、施工管理技士、国家公務員総合職、地方公務員上級、日商簿記検定、ビジネス法務実務検定など</p>
+                            <p><strong class="text-navy-950">民間資格:</strong> 英検、外国語検定、TOEIC、IT系資格、ファイナンシャルプランナー(AFP/CFP)など</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 11. 月額料金 ==================== -->
+    <section id="pricing" class="py-32 px-6 bg-slate-50/80 border-b border-slate-200/70">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">Pricing</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif">
+                    【月額料金】
+                </h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="100">
+                <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-sm hover-lift text-center">
+                    <p class="font-bold text-slate-600 text-lg mb-2">小学生以下</p>
+                    <div class="serif text-5xl sm:text-6xl font-extrabold text-navy-950 my-4">
+                        12,000 <span class="text-lg font-sans font-medium text-slate-500">円(税込)</span>
+                    </div>
+                </div>
+
+                <div class="p-8 sm:p-12 rounded-3xl bg-navy-50/60 border-2 border-navy-800 shadow-md hover-lift text-center relative">
+                    <div class="absolute -top-3.5 right-8 px-4 py-1 rounded-full bg-navy-900 text-white text-xs font-bold">
+                        中高大・社会人
+                    </div>
+                    <p class="font-bold text-navy-900 text-lg mb-2">中学生以上</p>
+                    <div class="serif text-5xl sm:text-6xl font-extrabold text-navy-950 my-4">
+                        15,000 <span class="text-lg font-sans font-medium text-slate-500">円(税込)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 月額料金の無料体験ボタン -->
+            <div class="text-center pt-2" data-aos="fade-up">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold py-4.5 px-12 rounded-full shadow-md hover-lift text-lg transition border border-yellow-500 tracking-wider whitespace-nowrap">
+                    お試し! 1週間無料体験 実施中!
+                </a>
+            </div>
+
+            <div class="text-sm text-slate-500 space-y-2 pt-4 text-center leading-relaxed" data-aos="fade-up">
+                <p>※小学生は12歳年度末までの児童、中学生以上は高校・大学等の学生や社会人を含む。</p>
+                <p>※学習計画の作成・変更支援、日々の進捗管理や学習相談、月1回のカウンセリングを行います。</p>
+                <p>※解約はいつでも可能です。前月までにお気軽にお申し出ください。</p>
+            </div>
+
+            <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-xs space-y-4 text-base sm:text-lg text-slate-700 leading-relaxed font-medium" data-aos="fade-up">
+                <p class="font-bold text-navy-950 text-lg sm:text-xl">
+                    入会金、年会費、教材費、手数料などは一切かかりません。
+                </p>
+                <p>
+                    当道場は授業をしたり、具体的な解き方を教えたりといった部分を削ぎ落とし、戦略づくりと進捗管理に特化しています。<br>
+                    本当に必要な要素だけに絞り込むことで、他の塾や予備校に通うよりも、大きく費用を削減することができます。
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 12. 特集：自習室 ==================== -->
+    <section id="studyroom" class="py-32 px-6 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto space-y-12">
+            
+            <div class="text-center" data-aos="fade-up">
+                <div class="section-tag">Study Space Feature</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif">
+                    【特集】
+                </h2>
+            </div>
+
+            <!-- ピックアップ自習室 ARGO（画像サイズを程よい大きさに調整） -->
+            <div class="p-8 sm:p-12 rounded-3xl bg-navy-50/60 border border-navy-200/80 shadow-sm hover-lift space-y-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center">
+                    <span class="inline-block bg-navy-800 text-white text-sm font-bold px-4 py-1.5 rounded mb-3">ピックアップ自習室</span>
+                    <h3 class="text-3xl sm:text-4xl font-extrabold text-navy-950 serif">
+                        自習室 ARGO STUDY ROOM
+                    </h3>
+                </div>
+
+                <!-- 画像11：ARGO写真（max-w-mdに抑えて中央配置） -->
+                <div class="max-w-md mx-auto rounded-2xl overflow-hidden border-2 border-slate-200 bg-white shadow-xs">
+                    <img src="argo-study-room.jpg" alt="自習室 ARGO STUDY ROOM の室内環境写真" class="w-full h-auto object-contain mx-auto">
+                </div>
+
+                <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium text-center max-w-3xl mx-auto">
+                    北仙台駅から徒歩3分、“本気の人”を応援するARGOさん。集中できる環境で雰囲気も良くとてもリーズナブルな料金で利用できます。ぜひご利用くださいませ!
+                </p>
+
+                <div class="text-sm sm:text-base text-slate-700 font-medium space-y-2 pt-2 border-t border-navy-200/60 text-center">
+                    <p>所在地:仙台市青葉区昭和町4-9 カーサ北仙台2階</p>
+                    <p>空席確認・予約TEL:022-706-7123</p>
+                </div>
+
+                <div class="pt-2 text-center">
+                    <a href="https://www.max-argo.site/coffee-desk.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-navy-800 hover:text-navy-950 font-bold text-base underline underline-offset-4">
+                        <span>詳しくはこちらから</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 仙台の自習室一覧（個別リンク設置済み） -->
+            <div class="space-y-6 pt-4" data-aos="fade-up">
+                <h3 class="text-xl sm:text-2xl font-bold text-navy-950 serif">
+                    仙台の自習室一覧 <span class="text-sm text-slate-400 font-sans font-normal">※順不同</span>
+                </h3>
+
+                <div class="grid sm:grid-cols-2 gap-5 text-base font-medium">
+                    
+                    <!-- 1. 仙台駅前自習室EAST -->
+                    <a href="https://east-sendai.com/" target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-navy-50/50 hover:border-navy-300 transition duration-200 block group hover-lift">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="font-bold text-navy-950 text-lg group-hover:text-navy-700">仙台駅前自習室EAST</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-navy-700"></i>
+                        </div>
+                        <p class="text-slate-500 text-sm">勉強できる、仕事がはかどる。仙台駅東口徒歩5分</p>
+                    </a>
+
+                    <!-- 2. 自習室マイデスク -->
+                    <a href="https://md-sendai.jp/index.html" target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-navy-50/50 hover:border-navy-300 transition duration-200 block group hover-lift">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="font-bold text-navy-950 text-lg group-hover:text-navy-700">自習室マイデスク</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-navy-700"></i>
+                        </div>
+                        <p class="text-slate-500 text-sm">一級建築士が本気で考えた自習室 あおば通駅出口徒歩30秒</p>
+                    </a>
+
+                    <!-- 3. 勉強カフェ仙台一番町スタジオ -->
+                    <a href="https://benkyo-cafe.com/sendai/" target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-navy-50/50 hover:border-navy-300 transition duration-200 block group hover-lift">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="font-bold text-navy-950 text-lg group-hover:text-navy-700">勉強カフェ仙台一番町スタジオ</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-navy-700"></i>
+                        </div>
+                        <p class="text-slate-500 text-sm">大人が思い切り勉強できる場所 青葉通一番町出口徒歩1分</p>
+                    </a>
+
+                    <!-- 4. BIZcomfort仙台一番町 -->
+                    <a href="https://bizcomfort.jp/study/miyagi/sendai-ichibancho.html" target="_blank" rel="noopener noreferrer" class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-navy-50/50 hover:border-navy-300 transition duration-200 block group hover-lift">
+                        <div class="flex items-center justify-between mb-2">
+                            <p class="font-bold text-navy-950 text-lg group-hover:text-navy-700">BIZcomfort仙台一番町</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-navy-700"></i>
+                        </div>
+                        <p class="text-slate-500 text-sm">24時間いつでも使える! 青葉通一番町駅南1出口徒歩2分</p>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 13. GAKU道塾長 やればできる! ＆ 説明会（完全中央配置・画像追加） ==================== -->
+    <section class="py-32 px-6 bg-slate-50/80 border-b border-slate-200/70">
+        <div class="max-w-4xl mx-auto space-y-12 text-center" data-aos="fade-up">
+            
+            <!-- 塾長画像（leader.jpg）を中央配置 -->
+            <div class="flex justify-center">
+                <div class="max-w-xs sm:max-w-sm rounded-3xl overflow-hidden border-4 border-navy-900 shadow-xl hover-lift bg-white">
+                    <img src="leader.jpg" alt="GAKU道塾長 やればできる！" class="w-full h-auto object-contain">
+                </div>
+            </div>
+
+            <!-- GAKU道塾長・やればできる! 中央配置 -->
+            <div class="space-y-4">
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif">GAKU道塾長</h2>
+                <div class="text-3xl sm:text-5xl font-extrabold text-red-600 serif tracking-wider">
+                    やればできる!
+                </div>
+                <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium pt-3 max-w-2xl mx-auto">
+                    戦略策定と実行支援のプロフェッショナルが、学生・社会人の自学自習をサポートします。独学のノウハウと塾講師・家庭教師としての経験から、自学自習のコツを体系化し、再現性ある形でみなさまにお伝えしています。
+                </p>
+            </div>
+
+            <!-- 規約・掲載リンク群（中央揃え） -->
+            <div class="flex flex-wrap justify-center gap-6 text-sm sm:text-base font-bold text-navy-800 pt-4 border-t border-slate-200">
+                <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5 whitespace-nowrap">
+                    <span>プライバシーポリシー</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <a href="https://jigakujisyu.my.canva.site/act" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5 whitespace-nowrap">
+                    <span>特定商取引法に基づく表記</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+                <a href="https://study-search.jp/columns/1045" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5 whitespace-nowrap">
+                    <span>Study Searchで紹介されました!</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+
+            <!-- 説明会案内 -->
+            <div class="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200 shadow-sm text-center space-y-5 hover-lift mt-8" data-aos="zoom-in">
+                <h3 class="text-xl sm:text-2xl font-bold text-navy-950 serif">GAKU道</h3>
+                <div class="text-2xl sm:text-4xl font-extrabold text-navy-950 serif">
+                    オンライン説明会随時開催!
+                </div>
+                <p class="text-sm text-slate-400 font-bold">※30分程度</p>
+                <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium">
+                    「問い合わせ」より、ご希望の日時を送信ください。<br>
+                    <strong class="text-navy-950 text-lg sm:text-2xl">まずは、お気軽に学習相談から!</strong>
+                </p>
+                
+                <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-5 max-w-xl mx-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[220px] bg-white border-2 border-navy-900 hover:bg-navy-50 text-navy-900 font-bold py-4 px-8 rounded-xl text-base transition hover-lift whitespace-nowrap">
+                        問い合わせ・Q&amp;A
+                    </a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[220px] bg-navy-900 hover:bg-navy-800 text-white font-bold py-4 px-8 rounded-xl text-base transition shadow-md hover-lift whitespace-nowrap">
+                        申し込みはこちら
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== 14. ちょこっとコラム（画像のみ配置） ==================== -->
+    <section id="column" class="py-32 px-6 bg-white border-b border-slate-100">
+        <div class="max-w-5xl mx-auto space-y-8 text-center" data-aos="fade-up">
+            
+            <div>
+                <div class="section-tag">Essay</div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-6">
+                    ちょこっとコラム
+                </h2>
+            </div>
+            
+            <!-- 画像12：コラム見開きノート画像 -->
+            <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-md hover-lift">
+                <img src="column-note.jpg" alt="ちょこっとコラム ノート見開きビジュアル" class="w-full h-auto object-contain mx-auto">
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ==================== フッター ==================== -->
+    <footer class="bg-navy-950 text-slate-400 py-16 px-6 text-center text-sm tracking-wider border-t border-navy-900">
+        <div class="max-w-5xl mx-auto space-y-8">
+            <div class="flex justify-center">
+                <img src="logo.png" alt="GAKU道" class="h-12 w-auto object-contain brightness-0 invert opacity-80">
+            </div>
+            <div class="flex flex-wrap justify-center gap-8 text-slate-300">
+                <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">プライバシーポリシー</a>
+                <a href="https://jigakujisyu.my.canva.site/act" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">特定商取引法に基づく表記</a>
+                <a href="https://study-search.jp/columns/1045" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">Study Searchで紹介されました!</a>
+            </div>
+            <p class="text-xs text-slate-500 pt-6 border-t border-navy-900">
+                &copy; GAKU道 All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 700,
+            offset: 40,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+</html>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Google Fonts -->

@@ -7,8 +7,8 @@
     <title>GAKU道（がくどう）| 史上最強の自学自習道場で合格をつかみ取れ！</title>
     <meta name="description" content="完全オンライン、学習計画と進捗管理に特化した道場 GAKU道(がくどう)。自分のコトは、自分で決める! 入会金無料! 1週間無料体験実施中!">
 
-    <!-- ファビコン設定 -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <!-- 正方形ファビコン設定 -->
+    <link rel="icon" type="image/jpeg" href="favicon.jpg">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -78,44 +78,20 @@
             height: 1px;
             background-color: #cbd5e1;
         }
-
-        .mobile-menu {
-            transition: all 0.3s ease-in-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        .mobile-menu.open {
-            max-height: 600px;
-            opacity: 1;
-        }
     </style>
 </head>
 <body class="bg-[#fafdfb]" id="top">
 
-    <!-- ==================== ヘッダー ==================== -->
-    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-2.5 transition-all duration-300 shadow-xs">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <!-- ==================== ヘッダー（タブを撤去しシンプル化） ==================== -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3 transition-all duration-300 shadow-xs">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
             
-            <!-- ロゴ組み込み -->
-            <a href="#top" class="flex items-center gap-2 hover:opacity-85 transition">
+            <!-- ロゴ -->
+            <a href="#top" class="flex items-center hover:opacity-85 transition">
                 <img src="logo.png" alt="GAKU道 ロゴ" class="h-10 md:h-12 w-auto object-contain">
             </a>
 
-            <!-- PC用 ナビゲーション -->
-            <nav class="hidden xl:flex items-center space-x-6 text-xs font-bold text-slate-600 tracking-wider">
-                <a href="#problem" class="hover:text-navy-800 transition">お悩み</a>
-                <a href="#research" class="hover:text-navy-800 transition">ネット依存と学力</a>
-                <a href="#features" class="hover:text-navy-800 transition">道場の特徴</a>
-                <a href="#flow" class="hover:text-navy-800 transition">ご支援の流れ</a>
-                <a href="#plan" class="hover:text-navy-800 transition">緻密な学習計画</a>
-                <a href="#modes" class="hover:text-navy-800 transition">3つの指導モード</a>
-                <a href="#target" class="hover:text-navy-800 transition">対象・合格実績</a>
-                <a href="#pricing" class="hover:text-navy-800 transition">料金</a>
-                <a href="#studyroom" class="hover:text-navy-800 transition">自習室特集</a>
-                <a href="#column" class="hover:text-navy-800 transition">コラム</a>
-            </nav>
-
+            <!-- 右側アクションボタンのみ -->
             <div class="flex items-center gap-3">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex text-xs font-bold text-navy-700 hover:text-navy-900 px-3 py-2 transition whitespace-nowrap">
                     問い合わせ
@@ -124,27 +100,7 @@
                     <i class="fa-solid fa-calendar-check text-[11px]"></i>
                     <span>1週間無料体験</span>
                 </a>
-                
-                <button onclick="toggleMobileMenu()" class="xl:hidden text-navy-800 p-2 text-xl focus:outline-none" aria-label="Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
             </div>
-        </div>
-
-        <!-- スマホ用メニュー -->
-        <div id="mobile-menu" class="mobile-menu xl:hidden bg-white border-b border-slate-200">
-            <nav class="px-6 py-4 flex flex-col space-y-3 text-sm font-medium text-slate-700">
-                <a href="#problem" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">お悩み</a>
-                <a href="#research" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">ネット依存と学力</a>
-                <a href="#features" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">道場の特徴</a>
-                <a href="#flow" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">ご支援の流れ</a>
-                <a href="#plan" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">緻密な学習計画</a>
-                <a href="#modes" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">3つの指導モード</a>
-                <a href="#target" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">対象・合格実績</a>
-                <a href="#pricing" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">料金</a>
-                <a href="#studyroom" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">自習室特集</a>
-                <a href="#column" onclick="toggleMobileMenu()" class="py-2 border-b border-slate-100">コラム</a>
-            </nav>
         </div>
     </header>
 
@@ -172,7 +128,6 @@
                 <p class="text-base sm:text-lg text-slate-700 font-medium">
                     完全オンライン、学習計画と進捗管理に特化した道場
                 </p>
-                <!-- ロゴ配置 -->
                 <div class="flex justify-center">
                     <img src="logo.png" alt="GAKU道" class="h-16 md:h-20 w-auto object-contain">
                 </div>
@@ -183,7 +138,7 @@
                 </div>
             </div>
 
-            <!-- ボタン枠 -->
+            <!-- ボタン枠（改行防止） -->
             <div class="pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[280px] bg-navy-800 hover:bg-navy-900 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-navy-800/25 hover-lift tracking-widest text-sm flex items-center justify-center gap-2 whitespace-nowrap">
                     <span>お試し! 1週間無料体験 実施中!</span>
@@ -543,7 +498,7 @@
                 </h2>
             </div>
 
-            <!-- 3モード説明 -->
+            <!-- 3モード説明（各画像配置） -->
             <div class="grid md:grid-cols-3 gap-6 text-sm" data-aos="fade-up" data-aos-delay="100">
                 
                 <!-- 仏（画像7） -->
@@ -828,7 +783,7 @@
                 </div>
             </div>
 
-            <!-- 仙台の自習室一覧（ながスタ削除・各リンク設置済み） -->
+            <!-- 仙台の自習室一覧（個別リンク設置済み） -->
             <div class="space-y-6 pt-4" data-aos="fade-up">
                 <h3 class="text-lg font-bold text-navy-900 serif">
                     仙台の自習室一覧 <span class="text-xs text-slate-400 font-sans font-normal">※順不同</span>
@@ -934,7 +889,7 @@
     </section>
 
 
-    <!-- ==================== 14. ちょこっとコラム（画像のみ配置） ==================== -->
+    <!-- ==================== 14. ちょこっとコラム ==================== -->
     <section id="column" class="py-28 px-6 bg-white border-b border-slate-100">
         <div class="max-w-4xl mx-auto space-y-8 text-center" data-aos="fade-up">
             
@@ -980,11 +935,6 @@
             offset: 40,
             easing: 'ease-out-cubic'
         });
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('open');
-        }
     </script>
 </body>
 </html>

@@ -88,7 +88,7 @@
             background: linear-gradient(transparent 60%, #fde047 60%);
         }
 
-        /* トップ背景画像設定 */
+        /* トップ背景画像設定（オーバーレイなしで鮮明に） */
         .hero-bg {
             background-image: url('hero-bg.jpg');
             background-size: cover;
@@ -97,10 +97,10 @@
             position: relative;
         }
 
-        /* 文字用の半透明背景レイヤー（透過率約75%） */
+        /* 文字用の半透明背景レイヤー（角は直角・透過率約75%） */
         .text-overlay-bg {
             background-color: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(4px); /* 背景を少しだけぼかして文字を際立たせる */
+            border-radius: 0; /* 直角指定 */
         }
 
         /* PDCAサイクルの円形レイアウト用 */
@@ -172,29 +172,28 @@
     </header>
 
 
-    <!-- ==================== 1. トップセクション（背景画像くっきり＋テキスト背面に半透明レイヤー） ==================== -->
-    <section class="hero-bg pt-40 pb-32 px-6 border-b border-slate-200/70 overflow-hidden">
-        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
+    <!-- ==================== 1. トップセクション ==================== -->
+    <section class="hero-bg pt-40 pb-32 px-6 overflow-hidden">
+        <div class="relative z-10 max-w-6xl mx-auto text-center space-y-8">
+            
             <div data-aos="fade-down">
                 <span class="inline-block bg-white/95 border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs">
                     塾でもない、家庭教師でもない、新しい学びの形
                 </span>
             </div>
 
-            <!-- 文字背面の白半透明レイヤー -->
-            <div data-aos="fade-up" data-aos-delay="100" class="text-overlay-bg inline-block px-8 sm:px-12 py-8 rounded-3xl shadow-sm">
-                <div class="inline-block border-2 border-navy-900 bg-white text-navy-900 text-base font-bold px-6 py-1.5 rounded-lg tracking-widest mb-5 shadow-2xs">
-                    自学自習道場
-                </div>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-navy-950 serif leading-[1.25] tracking-tight drop-shadow-sm mb-4">
+            <!-- 文字背面の白半透明レイヤー（角は直角） -->
+            <div data-aos="fade-up" data-aos-delay="100" class="text-overlay-bg inline-block px-4 sm:px-16 py-6 shadow-sm w-full sm:w-auto">
+                <h1 class="text-[1.8rem] sm:text-[2.6rem] md:text-6xl font-extrabold text-navy-950 serif leading-snug tracking-tight mb-4 whitespace-nowrap">
                     自分のコトは、自分で決める!
                 </h1>
-                <p class="text-xl sm:text-2xl text-slate-800 font-bold drop-shadow-sm">
+                <p class="text-sm sm:text-xl md:text-2xl text-navy-900 font-bold tracking-wide">
                     完全オンライン、学習計画と進捗管理に特化した道場
                 </p>
             </div>
 
             <div class="space-y-4 pt-2" data-aos="fade-up" data-aos-delay="200">
+                <!-- ロゴ配置 -->
                 <div class="flex justify-center py-2">
                     <img src="logo.png" alt="GAKU道" class="h-20 md:h-24 w-auto object-contain drop-shadow-md">
                 </div>
@@ -781,6 +780,7 @@
         <div class="max-w-5xl mx-auto space-y-10">
             
             <div class="flex justify-center">
+                <!-- 白い枠をなくし、そのままロゴを配置 -->
                 <img src="logo.png" alt="GAKU道" class="h-14 w-auto object-contain">
             </div>
             

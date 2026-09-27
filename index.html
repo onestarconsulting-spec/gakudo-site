@@ -88,19 +88,27 @@
             background: linear-gradient(transparent 60%, #fde047 60%);
         }
 
-        /* トップ背景画像設定（オーバーレイなしで鮮明に） */
+        /* トップ背景画像設定（画像の透過率を90%に設定して粗さを軽減） */
         .hero-bg {
+            position: relative;
+            background-color: #f8fafc;
+        }
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
             background-image: url('hero-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            position: relative;
+            opacity: 0.9; /* ご指定の90%透明度 */
+            z-index: 0;
         }
 
         /* 文字用の半透明背景レイヤー（角は直角・透過率約75%） */
         .text-overlay-bg {
             background-color: rgba(255, 255, 255, 0.75);
-            border-radius: 0; /* 直角指定 */
+            border-radius: 0;
         }
 
         /* PDCAサイクルの円形レイアウト用 */
@@ -177,7 +185,7 @@
         <div class="relative z-10 max-w-6xl mx-auto text-center space-y-8">
             
             <div data-aos="fade-down">
-                <span class="inline-block bg-white/95 border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs">
+                <span class="inline-block bg-white/95 border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs whitespace-nowrap">
                     塾でもない、家庭教師でもない、新しい学びの形
                 </span>
             </div>
@@ -188,12 +196,11 @@
                     自分のコトは、自分で決める!
                 </h1>
                 <p class="text-sm sm:text-xl md:text-2xl text-navy-900 font-bold tracking-wide">
-                    完全オンライン、学習計画と進捗管理に特化した道場
+                    <span class="inline-block">完全オンライン、</span><span class="inline-block">学習計画と進捗管理に特化した道場</span>
                 </p>
             </div>
 
             <div class="space-y-4 pt-2" data-aos="fade-up" data-aos-delay="200">
-                <!-- ロゴ配置 -->
                 <div class="flex justify-center py-2">
                     <img src="logo.png" alt="GAKU道" class="h-20 md:h-24 w-auto object-contain drop-shadow-md">
                 </div>
@@ -224,7 +231,7 @@
             <div class="text-center mb-16" data-aos="fade-up">
                 <div class="section-tag">Real Voices</div>
                 <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif">
-                    こんなお悩み、抱えていませんか?
+                    <span class="inline-block">こんなお悩み、</span><span class="inline-block">抱えていませんか?</span>
                 </h2>
             </div>
             <div class="space-y-8" data-aos="fade-up" data-aos-delay="100">
@@ -233,7 +240,9 @@
                         <i class="fa-solid fa-user-graduate text-navy-700"></i><span>受験生:</span>
                     </h3>
                     <p class="text-slate-800 text-lg sm:text-xl leading-relaxed font-medium pl-2">
-                        「塾や予備校に通っても成果が出ない･･･<br>自分でやり始めたけど続かない･･･、<br>でも、受験には本気で取り組みたい!」
+                        「<span class="inline-block">塾や予備校に通っても成果が出ない･･･</span><br>
+                        <span class="inline-block">自分でやり始めたけど続かない･･･、</span><br>
+                        <span class="inline-block">でも、受験には本気で取り組みたい!</span>」
                     </p>
                 </div>
                 <div class="text-center text-sm font-bold text-slate-400 tracking-widest">あるいは、</div>
@@ -242,12 +251,14 @@
                         <i class="fa-solid fa-house-user text-amber-700"></i><span>保護者:</span>
                     </h3>
                     <p class="text-slate-800 text-lg sm:text-xl leading-relaxed font-medium pl-2">
-                        「ゲームやスマホにばっかり夢中で、<br>ぜんぜん勉強をしない･･･、<br>何度言っても言うことを聞かない･･･。」
+                        「<span class="inline-block">ゲームやスマホにばっかり夢中で、</span><br>
+                        <span class="inline-block">ぜんぜん勉強をしない･･･、</span><br>
+                        <span class="inline-block">何度言っても言うことを聞かない･･･。</span>」
                     </p>
                 </div>
                 <div class="mt-10 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-navy-950 via-navy-900 to-navy-850 text-white text-center shadow-xl hover-lift border border-navy-800" data-aos="zoom-in">
                     <p class="text-2xl sm:text-4xl font-bold serif tracking-wider text-amber-300">
-                        これらを解決するのが「GAKU道」です。
+                        <span class="inline-block">これらを解決するのが</span><span class="inline-block">「GAKU道」です。</span>
                     </p>
                 </div>
             </div>
@@ -277,9 +288,14 @@
                     <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600"></span>イライラ</li>
                     <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600"></span>睡眠不足や生活のリズムの乱れ</li>
                 </ul>
-                <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">この結果、遅刻や欠席が増えたり、家族・友人とのトラブルが増加したりします。</p>
-                <div class="p-6 rounded-2xl bg-rose-50 border-l-8 border-red-600 text-red-700 font-bold text-lg sm:text-xl">
-                    そして･･･<br>学力も低下します。
+                <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
+                    <span class="inline-block">この結果、遅刻や欠席が増えたり、</span><span class="inline-block">家族・友人とのトラブルが増加したりします。</span>
+                </p>
+                <div>
+                    <!-- 枠の広がりを防ぎ、文字長にぴったり合わせる最適化 -->
+                    <div class="inline-block p-6 rounded-2xl bg-rose-50 border-l-8 border-red-600 text-red-700 font-bold text-lg sm:text-xl text-left">
+                        <span class="inline-block">そして･･･</span><br><span class="inline-block">学力も低下します。</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -294,9 +310,11 @@
                 <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif">学力への影響</h2>
             </div>
             <div class="space-y-5 text-base sm:text-xl text-slate-700 leading-relaxed font-medium" data-aos="fade-up" data-aos-delay="100">
-                <p>近年、仙台市は東北大学と連携して、スマホやネット環境が学習意欲に与える影響について研究を進めています。グラフは、仙台市標準学力検査の中学生の数学の平均点と平日1日あたりの通信アプリの使用時間との関係について示したものです。</p>
+                <p>
+                    <span class="inline-block">近年、仙台市は東北大学と連携して、</span><span class="inline-block">スマホやネット環境が学習意欲に与える影響について</span><span class="inline-block">研究を進めています。</span><span class="inline-block">グラフは、仙台市標準学力検査の</span><span class="inline-block">中学生の数学の平均点と</span><span class="inline-block">平日1日あたりの通信アプリの</span><span class="inline-block">使用時間との関係について示したものです。</span>
+                </p>
                 <p class="bg-navy-50/70 p-5 rounded-2xl border-l-4 border-navy-700 text-navy-950 font-bold">
-                    GAKU道では、これらの研究結果も踏まえた学習コンサルティングを2017年よりおこなっています。
+                    <span class="inline-block">GAKU道では、これらの研究結果も踏まえた</span><span class="inline-block">学習コンサルティングを</span><span class="inline-block">2017年より行っています。</span>
                 </p>
             </div>
             <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover-lift space-y-4" data-aos="fade-up" data-aos-delay="200">
@@ -373,19 +391,19 @@
             <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="p-6 rounded-2xl bg-blue-50 border border-blue-100 text-center hover-lift flex flex-col justify-center min-h-[160px]">
                     <div class="serif text-4xl font-extrabold text-navy-600 mb-3">1.</div>
-                    <p class="text-base font-bold text-navy-900">現状について<br>ヒヤリングをする</p>
+                    <p class="text-base font-bold text-navy-900"><span class="inline-block">現状について</span><br><span class="inline-block">ヒアリングをする</span></p>
                 </div>
                 <div class="p-6 rounded-2xl bg-blue-100 border border-blue-200 text-center hover-lift flex flex-col justify-center min-h-[160px]">
                     <div class="serif text-4xl font-extrabold text-navy-700 mb-3">2.</div>
-                    <p class="text-base font-bold text-navy-900">目標・やること・<br>期限を決める</p>
+                    <p class="text-base font-bold text-navy-900"><span class="inline-block">目標・やること・</span><br><span class="inline-block">期限を決める</span></p>
                 </div>
                 <div class="p-6 rounded-2xl bg-blue-200 border border-blue-300 text-center hover-lift flex flex-col justify-center min-h-[160px]">
                     <div class="serif text-4xl font-extrabold text-navy-800 mb-3">3.</div>
-                    <p class="text-base font-bold text-navy-950">学習計画を<br>立てる</p>
+                    <p class="text-base font-bold text-navy-950"><span class="inline-block">学習計画を</span><br><span class="inline-block">立てる</span></p>
                 </div>
                 <div class="p-6 rounded-2xl bg-navy-600 border border-navy-700 text-center hover-lift flex flex-col justify-center min-h-[160px]">
                     <div class="serif text-4xl font-extrabold text-white mb-3">4.</div>
-                    <p class="text-base font-bold text-white">計画通りに<br>実行する</p>
+                    <p class="text-base font-bold text-white"><span class="inline-block">計画通りに</span><br><span class="inline-block">実行する</span></p>
                 </div>
             </div>
             <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-navy-950 via-navy-900 to-navy-850 text-white shadow-xl hover-lift space-y-6 border border-navy-800" data-aos="zoom-in">
@@ -395,9 +413,13 @@
                     <li>※月1回の学習カウンセリング</li>
                     <li>※計画に無理があれば適宜修正</li>
                 </ul>
-                <p class="text-base sm:text-xl leading-relaxed text-slate-200 pt-2 border-t border-navy-700">やる内容、目標、計画などは最終的にすべてご本人が決めます。</p>
+                <p class="text-base sm:text-xl leading-relaxed text-slate-200 pt-2 border-t border-navy-700">
+                    <span class="inline-block">やる内容、目標、計画などは</span><span class="inline-block">最終的にすべてご本人が決めます。</span>
+                </p>
                 <div class="pt-2">
-                    <span class="inline-block border-2 border-red-500 rounded-full px-7 py-2.5 text-xl sm:text-2xl font-bold text-white tracking-widest bg-red-600/30">つまり‘有言実行”です。</span>
+                    <span class="inline-block border-2 border-red-500 rounded-full px-7 py-2.5 text-xl sm:text-2xl font-bold text-white tracking-widest bg-red-600/30">
+                        <span class="inline-block">つまり</span><span class="inline-block">‘有言実行”です。</span>
+                    </span>
                 </div>
             </div>
             <div class="pt-16 space-y-12" data-aos="fade-up">
@@ -442,16 +464,26 @@
             <div class="text-center" data-aos="fade-up">
                 <div class="section-tag">Planning Strategy</div>
                 <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-2">緻密な学習計画</h2>
-                <div class="text-sm font-bold text-navy-800">GAKU道メソッド*の一部<br><span class="text-xs text-slate-400 font-normal">*商標登録予定</span></div>
-                <p class="text-base sm:text-xl text-slate-700 font-medium mt-4">当道場では、計画を「時間単位」で立てていき、短期・長期スケジュールを組んでいきます。</p>
+                <div class="text-sm font-bold text-navy-800">
+                    <span class="inline-block">GAKU道メソッド*の一部</span><br><span class="text-xs text-slate-400 font-normal">*商標登録予定</span>
+                </div>
+                <p class="text-base sm:text-xl text-slate-700 font-medium mt-4">
+                    <span class="inline-block">当道場では、計画を「時間単位」で立てていき、</span><span class="inline-block">短期・長期スケジュールを組んでいきます。</span>
+                </p>
             </div>
             <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover-lift" data-aos="fade-up" data-aos-delay="100">
                 <img src="table-589hours.png" alt="緻密な学習計画 GAKU道メソッド 589時間計画表" class="w-full h-auto object-contain mx-auto rounded-xl">
             </div>
             <div class="text-center p-8 sm:p-10 bg-white rounded-3xl border-2 border-red-200 shadow-xs space-y-4" data-aos="fade-up">
-                <p class="font-bold text-slate-800 text-lg sm:text-xl">未来が見えると、何をすべきかが明確になる。</p>
-                <p class="font-bold text-slate-800 text-lg sm:text-xl">時間を制する者が、受験を制する!</p>
-                <div class="text-3xl sm:text-4xl font-extrabold text-red-600 serif pt-2">半年で589時間しか勉強できない!!</div>
+                <p class="font-bold text-slate-800 text-lg sm:text-xl">
+                    <span class="inline-block">未来が見えると、</span><span class="inline-block">何をすべきかが明確になる。</span>
+                </p>
+                <p class="font-bold text-slate-800 text-lg sm:text-xl">
+                    <span class="inline-block">時間を制する者が、</span><span class="inline-block">受験を制する!</span>
+                </p>
+                <div class="text-3xl sm:text-4xl font-extrabold text-red-600 serif pt-2">
+                    <span class="inline-block">半年で589時間しか</span><span class="inline-block">勉強できない!!</span>
+                </div>
             </div>
             <div class="pt-10 space-y-8" data-aos="fade-up">
                 <h3 class="text-2xl sm:text-3xl font-bold text-navy-950 serif text-center">日々の報告例</h3>
@@ -519,7 +551,9 @@
         <div class="max-w-5xl mx-auto space-y-12">
             <div class="text-center" data-aos="fade-up">
                 <div class="section-tag">Target Profile</div>
-                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-6">対象の方は、学生や受験生のみなさん</h2>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-6">
+                    <span class="inline-block">対象の方は、</span><span class="inline-block">学生や受験生のみなさん</span>
+                </h2>
                 <div class="flex flex-wrap justify-center gap-3 text-sm sm:text-base font-bold text-navy-950 mb-8">
                     <span class="px-5 py-2.5 bg-white rounded-full border border-slate-200 shadow-2xs">●小学校中学年~大学受験生（※学校に通っていない方も含む）</span>
                     <span class="px-5 py-2.5 bg-white rounded-full border border-slate-200 shadow-2xs">●資格取得を目指す大学生・社会人</span>
@@ -604,8 +638,8 @@
                 <div class="section-tag">Track Record</div>
                 <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-4">合格実績</h2>
                 <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium">
-                    当道場の方針として、公開しておりません。しかし、<br>
-                    <strong class="text-xl sm:text-2xl text-navy-950 font-extrabold marker-yellow px-1">ほとんどの生徒が、第一志望の合格をつかみ取っています。</strong>
+                    <span class="inline-block">当道場の方針として、公開しておりません。</span><span class="inline-block">しかし、</span><br>
+                    <strong class="text-xl sm:text-2xl text-navy-950 font-extrabold marker-yellow px-1 inline-block">ほとんどの生徒が、第一志望の合格をつかみ取っています。</strong>
                 </p>
                 <p class="text-sm text-slate-400 mt-3">※詳細は「問い合わせ・Q&amp;A」をご覧下さい。</p>
             </div>
@@ -661,10 +695,11 @@
             </div>
             <div class="p-8 sm:p-12 rounded-3xl bg-white border-2 border-red-100 shadow-md text-center space-y-5" data-aos="fade-up">
                 <p class="font-bold text-navy-950 text-xl sm:text-2xl bg-red-50 text-red-700 py-3 rounded-xl border border-red-200">
-                    入会金、年会費、教材費、手数料などは<span class="underline decoration-red-400 decoration-4 underline-offset-4">一切かかりません。</span>
+                    <span class="inline-block">入会金、年会費、教材費、手数料などは</span><span class="inline-block underline decoration-red-400 decoration-4 underline-offset-4">一切かかりません。</span>
                 </p>
                 <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
-                    当道場は授業をしたり、具体的な解き方を教えたりといった部分を削ぎ落とし、戦略づくりと進捗管理に特化しています。<br>本当に必要な要素だけに絞り込むことで、他の塾や予備校に通うよりも、大きく費用を削減することができます。
+                    <span class="inline-block">当道場は授業をしたり、</span><span class="inline-block">具体的な解き方を教えたりといった部分を削ぎ落とし、</span><span class="inline-block">戦略づくりと進捗管理に特化しています。</span><br>
+                    <span class="inline-block">本当に必要な要素だけに絞り込むことで、</span><span class="inline-block">他の塾や予備校に通うよりも、</span><span class="inline-block">大きく費用を削減することができます。</span>
                 </p>
             </div>
         </div>
@@ -686,7 +721,9 @@
                 <div class="max-w-md mx-auto rounded-2xl overflow-hidden border-2 border-slate-200 bg-white shadow-xs">
                     <img src="argo-study-room.jpg" alt="自習室 ARGO STUDY ROOM の室内環境写真" class="w-full h-auto object-contain mx-auto">
                 </div>
-                <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium text-center max-w-3xl mx-auto">北仙台駅から徒歩3分、“本気の人”を応援するARGOさん。集中できる環境で雰囲気も良くとてもリーズナブルな料金で利用できます。ぜひご利用くださいませ!</p>
+                <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium text-center max-w-3xl mx-auto">
+                    <span class="inline-block">北仙台駅から徒歩3分、</span><span class="inline-block">“本気の人”を応援するARGOさん。</span><span class="inline-block">集中できる環境で雰囲気も良く</span><span class="inline-block">とてもリーズナブルな料金で利用できます。</span><span class="inline-block">ぜひご利用くださいませ!</span>
+                </p>
                 <div class="text-sm sm:text-base text-slate-700 font-medium space-y-2 pt-2 border-t border-navy-200/60 text-center">
                     <p>所在地:仙台市青葉区昭和町4-9 カーサ北仙台2階</p>
                     <p>空席確認・予約TEL:022-706-7123</p>
@@ -739,7 +776,7 @@
                     GAKU道塾長 <span class="text-red-600 font-extrabold tracking-wider">やればできる!</span>
                 </div>
                 <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium pt-1 max-w-2xl mx-auto">
-                    戦略策定と実行支援のプロフェッショナルが、学生・社会人の自学自習をサポートします。独学のノウハウと塾講師・家庭教師としての経験から、自学自習のコツを体系化し、再現性ある形でみなさまにお伝えしています。
+                    <span class="inline-block">戦略策定と実行支援のプロフェッショナルが、</span><span class="inline-block">学生・社会人の自学自習をサポートします。</span><span class="inline-block">独学のノウハウと塾講師・家庭教師としての経験から、</span><span class="inline-block">自学自習のコツを体系化し、</span><span class="inline-block">再現性ある形でみなさまにお伝えしています。</span>
                 </p>
             </div>
 
@@ -780,7 +817,6 @@
         <div class="max-w-5xl mx-auto space-y-10">
             
             <div class="flex justify-center">
-                <!-- 白い枠をなくし、そのままロゴを配置 -->
                 <img src="logo.png" alt="GAKU道" class="h-14 w-auto object-contain">
             </div>
             

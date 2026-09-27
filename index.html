@@ -96,12 +96,11 @@
             background-repeat: no-repeat;
             position: relative;
         }
-        /* 背景画像を薄く見せるための白レイヤー（上85%白 → 下95%白 のグラデーション） */
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
-            z-index: 0;
+
+        /* 文字用の半透明背景レイヤー（透過率約75%） */
+        .text-overlay-bg {
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(4px); /* 背景を少しだけぼかして文字を際立たせる */
         }
 
         /* PDCAサイクルの円形レイアウト用 */
@@ -173,30 +172,29 @@
     </header>
 
 
-    <!-- ==================== 1. トップセクション（背景画像＋白オーバーレイ） ==================== -->
+    <!-- ==================== 1. トップセクション（背景画像くっきり＋テキスト背面に半透明レイヤー） ==================== -->
     <section class="hero-bg pt-40 pb-32 px-6 border-b border-slate-200/70 overflow-hidden">
-        <!-- 白の半透明レイヤー -->
-        <div class="hero-overlay"></div>
-        
-        <!-- コンテンツ（前面に表示するため relative z-10 指定） -->
         <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
             <div data-aos="fade-down">
-                <span class="inline-block bg-white/90 backdrop-blur-sm border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs">
+                <span class="inline-block bg-white/95 border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs">
                     塾でもない、家庭教師でもない、新しい学びの形
                 </span>
             </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <div class="inline-block border-2 border-navy-900 bg-white/90 backdrop-blur-sm text-navy-900 text-base font-bold px-6 py-1.5 rounded-lg tracking-widest mb-5 shadow-2xs">
+
+            <!-- 文字背面の白半透明レイヤー -->
+            <div data-aos="fade-up" data-aos-delay="100" class="text-overlay-bg inline-block px-8 sm:px-12 py-8 rounded-3xl shadow-sm">
+                <div class="inline-block border-2 border-navy-900 bg-white text-navy-900 text-base font-bold px-6 py-1.5 rounded-lg tracking-widest mb-5 shadow-2xs">
                     自学自習道場
                 </div>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-navy-950 serif leading-[1.25] tracking-tight drop-shadow-sm">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-navy-950 serif leading-[1.25] tracking-tight drop-shadow-sm mb-4">
                     自分のコトは、自分で決める!
                 </h1>
-            </div>
-            <div class="space-y-4 pt-2" data-aos="fade-up" data-aos-delay="200">
                 <p class="text-xl sm:text-2xl text-slate-800 font-bold drop-shadow-sm">
                     完全オンライン、学習計画と進捗管理に特化した道場
                 </p>
+            </div>
+
+            <div class="space-y-4 pt-2" data-aos="fade-up" data-aos-delay="200">
                 <div class="flex justify-center py-2">
                     <img src="logo.png" alt="GAKU道" class="h-20 md:h-24 w-auto object-contain drop-shadow-md">
                 </div>
@@ -206,6 +204,7 @@
                     </span>
                 </div>
             </div>
+
             <div class="pt-8 flex flex-col sm:flex-row justify-center items-center gap-5 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[320px] bg-navy-900 hover:bg-navy-800 text-white font-bold py-4.5 px-9 rounded-2xl shadow-lg shadow-navy-900/25 hover-lift tracking-widest text-base flex items-center justify-center gap-2 whitespace-nowrap">
                     <span>お試し! 1週間無料体験 実施中!</span>
@@ -731,7 +730,6 @@
         <div class="max-w-3xl mx-auto space-y-8 text-center" data-aos="fade-up">
             
             <div class="flex justify-center">
-                <!-- 塾長の画像を少し大きく調整 -->
                 <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-navy-900 shadow-md bg-white">
                     <img src="leader.jpg" alt="GAKU道塾長" class="w-full h-full object-cover">
                 </div>
@@ -783,7 +781,6 @@
         <div class="max-w-5xl mx-auto space-y-10">
             
             <div class="flex justify-center">
-                <!-- 白い枠をなくし、そのままロゴ（logo.png）を配置 -->
                 <img src="logo.png" alt="GAKU道" class="h-14 w-auto object-contain">
             </div>
             

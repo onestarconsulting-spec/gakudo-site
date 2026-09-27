@@ -29,7 +29,7 @@
                         navy: {
                             950: '#0f1722',
                             900: '#152433',
-                            800: '#243d57', /* ピラミッド図の基準ディープネイビー */
+                            800: '#243d57', /* 基準ディープネイビー */
                             700: '#345373',
                             600: '#4e7191', /* スレートブルー */
                             100: '#e2eaf0',
@@ -119,10 +119,10 @@
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex text-xs font-bold text-navy-700 hover:text-navy-900 px-3 py-2 transition">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex text-xs font-bold text-navy-700 hover:text-navy-900 px-3 py-2 transition whitespace-nowrap">
                     問い合わせ
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="bg-navy-800 hover:bg-navy-900 text-white px-5 py-2.5 rounded-full font-bold text-xs tracking-wider shadow-md shadow-navy-800/20 hover-lift flex items-center gap-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="bg-navy-800 hover:bg-navy-900 text-white px-5 py-2.5 rounded-full font-bold text-xs tracking-wider shadow-md shadow-navy-800/20 hover-lift flex items-center gap-2 whitespace-nowrap">
                     <i class="fa-solid fa-calendar-check text-[11px]"></i>
                     <span>1週間無料体験</span>
                 </a>
@@ -184,12 +184,13 @@
                 </div>
             </div>
 
-            <div class="pt-6 flex flex-col sm:flex-row justify-center gap-4 max-w-lg mx-auto" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="bg-navy-800 hover:bg-navy-900 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-navy-800/25 hover-lift tracking-widest text-sm flex items-center justify-center gap-2">
+            <!-- ボタン枠（中途半端な改行を防ぐ十分な幅とwhitespace-nowrap） -->
+            <div class="pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[280px] bg-navy-800 hover:bg-navy-900 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-navy-800/25 hover-lift tracking-widest text-sm flex items-center justify-center gap-2 whitespace-nowrap">
                     <span>お試し! 1週間無料体験 実施中!</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="bg-white border-2 border-navy-800 hover:bg-navy-50 text-navy-800 font-bold py-4 px-8 rounded-xl hover-lift tracking-widest text-sm flex items-center justify-center gap-2">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[240px] bg-white border-2 border-navy-800 hover:bg-navy-50 text-navy-800 font-bold py-4 px-8 rounded-xl hover-lift tracking-widest text-sm flex items-center justify-center gap-2 whitespace-nowrap">
                     <i class="fa-regular fa-envelope"></i>
                     <span>問い合わせはこちら</span>
                 </a>
@@ -268,9 +269,13 @@
                 </div>
             </div>
 
-            <!-- 画像1：総務省グラフ -->
-            <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200 shadow-sm hover-lift" data-aos="fade-up" data-aos-delay="100">
+            <!-- 画像1：総務省グラフ ＆ 出典（直下に配置） -->
+            <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200 shadow-sm hover-lift space-y-3" data-aos="fade-up" data-aos-delay="100">
                 <img src="graph-net-dependence.png" alt="総務省 令和5年度情報通信メディアの利用時間と情報行動に関する調査 ネット依存傾向者の割合グラフ" class="w-full h-auto object-contain mx-auto rounded-xl">
+                <!-- グラフのすぐ直下に配置 -->
+                <p class="text-xs text-slate-500 text-right font-medium pt-1">
+                    出典:総務省「令和5年度情報通信メディアの利用時間と情報行動に関する調査」
+                </p>
             </div>
 
             <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-xs space-y-4" data-aos="fade-up">
@@ -287,9 +292,6 @@
                     そして･･･<br>
                     学力も低下します。
                 </div>
-                <p class="text-xs text-slate-400 pt-2 text-right">
-                    出典:総務省「令和5年度情報通信メディアの利用時間と情報行動に関する調査」
-                </p>
             </div>
 
         </div>
@@ -317,13 +319,12 @@
             </div>
 
             <!-- 画像2：仙台市グラフ -->
-            <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200 shadow-sm hover-lift" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200 shadow-sm hover-lift space-y-3" data-aos="fade-up" data-aos-delay="200">
                 <img src="graph-sendai-math.png" alt="仙台市 平成26年度学習意欲の科学的研究に関するプロジェクト 数学平均点グラフ" class="w-full h-auto object-contain mx-auto rounded-xl">
+                <p class="text-xs text-slate-500 text-right font-medium pt-1">
+                    出典:仙台市「平成26年度学習意欲の科学的研究に関するプロジェクト」
+                </p>
             </div>
-
-            <p class="text-xs text-slate-400 text-right">
-                出典:仙台市「平成26年度学習意欲の科学的研究に関するプロジェクト」
-            </p>
 
         </div>
     </section>
@@ -760,8 +761,9 @@
                 </div>
             </div>
 
+            <!-- 月額料金の無料体験ボタン（改行防止・十分な幅） -->
             <div class="text-center pt-2" data-aos="fade-up">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold py-4 px-10 rounded-full shadow-md hover-lift text-base transition border border-yellow-500 tracking-wider">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold py-4 px-10 rounded-full shadow-md hover-lift text-base transition border border-yellow-500 tracking-wider whitespace-nowrap">
                     お試し! 1週間無料体験 実施中!
                 </a>
             </div>
@@ -797,7 +799,7 @@
                 </h2>
             </div>
 
-            <!-- ピックアップ自習室 -->
+            <!-- ピックアップ自習室 ARGO -->
             <div class="p-8 sm:p-10 rounded-3xl bg-navy-50/60 border border-slate-200 shadow-sm hover-lift space-y-6" data-aos="fade-up" data-aos-delay="100">
                 <div>
                     <span class="inline-block bg-navy-800 text-white text-xs font-bold px-3 py-1 rounded mb-3">ピックアップ自習室</span>
@@ -828,37 +830,50 @@
                 </div>
             </div>
 
-            <!-- 仙台の自習室一覧 -->
+            <!-- 仙台の自習室一覧（ながスタ削除・各リンク設置済み） -->
             <div class="space-y-6 pt-4" data-aos="fade-up">
                 <h3 class="text-lg font-bold text-navy-900 serif">
                     仙台の自習室一覧 <span class="text-xs text-slate-400 font-sans font-normal">※順不同</span>
                 </h3>
 
                 <div class="grid sm:grid-cols-2 gap-4 text-xs sm:text-sm font-medium">
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <p class="font-bold text-navy-900 mb-1">自習室 ARGO STUDY ROOM</p>
-                        <p class="text-slate-500 text-xs">本気の人を応援したい 北仙台駅徒歩3分</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <p class="font-bold text-navy-900 mb-1">勉強カフェ仙台一番町スタジオ</p>
-                        <p class="text-slate-500 text-xs">大人が思い切り勉強できる場所 青葉通一番町出口徒歩1分</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <p class="font-bold text-navy-900 mb-1">仙台駅前自習室EAST</p>
+                    
+                    <!-- 1. 仙台駅前自習室EAST -->
+                    <a href="https://east-sendai.com/" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-navy-50/50 hover:border-navy-300 transition duration-200 block group hover-lift">
+                        <div class="flex items-center justify-between mb-1">
+                            <p class="font-bold text-navy-900 text-sm group-hover:text-navy-700">仙台駅前自習室EAST</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-navy-700"></i>
+                        </div>
                         <p class="text-slate-500 text-xs">勉強できる、仕事がはかどる。仙台駅東口徒歩5分</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <p class="font-bold text-navy-900 mb-1">BIZcomfort仙台一番町</p>
-                        <p class="text-slate-500 text-xs">24時間いつでも使える! 青葉通一番町駅南1出口徒歩2分</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <p class="font-bold text-navy-900 mb-1">自習室マイデスク</p>
+                    </a>
+
+                    <!-- 2. 自習室マイデスク -->
+                    <a href="https://md-sendai.jp/index.html" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-navy-50/50 hover:border-navy-300 transition duration-200 block group hover-lift">
+                        <div class="flex items-center justify-between mb-1">
+                            <p class="font-bold text-navy-900 text-sm group-hover:text-navy-700">自習室マイデスク</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-navy-700"></i>
+                        </div>
                         <p class="text-slate-500 text-xs">一級建築士が本気で考えた自習室 あおば通駅出口徒歩30秒</p>
-                    </div>
-                    <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
-                        <p class="font-bold text-navy-900 mb-1">長町の自習室ながスタ</p>
-                        <p class="text-slate-500 text-xs">学生も大人も勉強できる 長町一丁目駅徒歩1分</p>
-                    </div>
+                    </a>
+
+                    <!-- 3. 勉強カフェ仙台一番町スタジオ -->
+                    <a href="https://benkyo-cafe.com/sendai/" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-navy-50/50 hover:border-navy-300 transition duration-200 block group hover-lift">
+                        <div class="flex items-center justify-between mb-1">
+                            <p class="font-bold text-navy-900 text-sm group-hover:text-navy-700">勉強カフェ仙台一番町スタジオ</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-navy-700"></i>
+                        </div>
+                        <p class="text-slate-500 text-xs">大人が思い切り勉強できる場所 青葉通一番町出口徒歩1分</p>
+                    </a>
+
+                    <!-- 4. BIZcomfort仙台一番町 -->
+                    <a href="https://bizcomfort.jp/study/miyagi/sendai-ichibancho.html" target="_blank" rel="noopener noreferrer" class="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:bg-navy-50/50 hover:border-navy-300 transition duration-200 block group hover-lift">
+                        <div class="flex items-center justify-between mb-1">
+                            <p class="font-bold text-navy-900 text-sm group-hover:text-navy-700">BIZcomfort仙台一番町</p>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-400 group-hover:text-navy-700"></i>
+                        </div>
+                        <p class="text-slate-500 text-xs">24時間いつでも使える! 青葉通一番町駅南1出口徒歩2分</p>
+                    </a>
+
                 </div>
             </div>
 
@@ -881,21 +896,21 @@
             </div>
 
             <div class="flex flex-wrap gap-6 text-xs font-bold text-navy-800 pt-2 border-t border-slate-200" data-aos="fade-up">
-                <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5 whitespace-nowrap">
                     <span>プライバシーポリシー</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                 </a>
-                <a href="https://jigakujisyu.my.canva.site/act" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                <a href="https://jigakujisyu.my.canva.site/act" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5 whitespace-nowrap">
                     <span>特定商取引法に基づく表記</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                 </a>
-                <a href="https://study-search.jp/columns/1045" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5">
+                <a href="https://study-search.jp/columns/1045" target="_blank" rel="noopener noreferrer" class="hover:underline flex items-center gap-1.5 whitespace-nowrap">
                     <span>Study Searchで紹介されました!</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
                 </a>
             </div>
 
-            <!-- 説明会案内 -->
+            <!-- 説明会案内（ボタン改行防止） -->
             <div class="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm text-center space-y-4 hover-lift" data-aos="zoom-in">
                 <h3 class="text-lg sm:text-xl font-bold text-navy-900 serif">GAKU道</h3>
                 <div class="text-xl sm:text-2xl font-extrabold text-navy-900 serif">
@@ -907,11 +922,11 @@
                     <strong class="text-navy-900 text-base">まずは、お気軽に学習相談から!</strong>
                 </p>
                 
-                <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="bg-white border-2 border-navy-800 hover:bg-navy-50 text-navy-800 font-bold py-3.5 px-8 rounded-xl text-sm transition hover-lift">
+                <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[200px] bg-white border-2 border-navy-800 hover:bg-navy-50 text-navy-800 font-bold py-3.5 px-8 rounded-xl text-sm transition hover-lift whitespace-nowrap">
                         問い合わせ・Q&amp;A
                     </a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="bg-navy-800 hover:bg-navy-900 text-white font-bold py-3.5 px-8 rounded-xl text-sm transition shadow-md hover-lift">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[200px] bg-navy-800 hover:bg-navy-900 text-white font-bold py-3.5 px-8 rounded-xl text-sm transition shadow-md hover-lift whitespace-nowrap">
                         申し込みはこちら
                     </a>
                 </div>
@@ -921,85 +936,21 @@
     </section>
 
 
-    <!-- ==================== 14. ちょこっとコラム ==================== -->
+    <!-- ==================== 14. ちょこっとコラム（画像のみ配置） ==================== -->
     <section id="column" class="py-28 px-6 bg-white border-b border-slate-100">
-        <div class="max-w-4xl mx-auto space-y-16">
+        <div class="max-w-4xl mx-auto space-y-8 text-center" data-aos="fade-up">
             
-            <div class="text-center" data-aos="fade-up">
+            <div>
                 <div class="section-tag">Essay</div>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-navy-900 serif mb-6">
                     ちょこっとコラム
                 </h2>
-                
-                <!-- 画像12：コラム見開きノート画像 -->
-                <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-md hover-lift mb-12">
-                    <img src="column-note.jpg" alt="ちょこっとコラム ノート見開きビジュアル" class="w-full h-auto object-contain mx-auto">
-                </div>
             </div>
-
-            <!-- コラム1: 通塾という安心感 -->
-            <article class="p-8 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 shadow-xs hover-lift space-y-6" data-aos="fade-up">
-                <h3 class="text-xl sm:text-2xl font-bold text-navy-900 serif border-b border-slate-200 pb-3">
-                    通塾という安心感
-                </h3>
-                <div class="text-sm sm:text-base text-slate-700 leading-relaxed font-medium space-y-4">
-                    <p>
-                        塾に通うと、<br>
-                        子どもは、「通っている=勉強している」と感じやすい･･･<br>
-                        親は、「塾に任せている」という安心を持ちやすい･･･
-                    </p>
-                    <p>
-                        その結果、通塾そのものが“免罪符”のように機能してしまうことがあります。<br>
-                        しかし―― 安心感は、成績とは関係ないですよね。
-                    </p>
-                    
-                    <div class="p-6 rounded-2xl bg-white border border-slate-200 text-center font-bold text-navy-900 space-y-1 shadow-2xs my-4 text-sm sm:text-base">
-                        <p>授業を受ける</p>
-                        <p class="text-slate-400">↓</p>
-                        <p>わかった気になる</p>
-                        <p class="text-slate-400">↓</p>
-                        <p>復習しない</p>
-                        <p class="text-slate-400">↓</p>
-                        <p>定着しない</p>
-                    </div>
-
-                    <p>この循環が続くと、当然結果は変わりません。</p>
-                    <p>成績というのは”相対評価”です。</p>
-                    <p class="text-base sm:text-lg font-bold text-navy-900 pt-1">
-                        「成績が上がる人がいる分、下がる人がいる」
-                    </p>
-                </div>
-            </article>
-
-            <!-- コラム2: 差を生むものは、なにか･.. -->
-            <article class="p-8 sm:p-10 rounded-3xl bg-slate-50 border border-slate-200 shadow-xs hover-lift space-y-6" data-aos="fade-up">
-                <h3 class="text-xl sm:text-2xl font-bold text-navy-900 serif border-b border-slate-200 pb-3">
-                    差を生むものは、なにか･..
-                </h3>
-                <div class="text-sm sm:text-base text-slate-700 leading-relaxed font-medium space-y-4">
-                    <p>伸びる生徒は、自ら手を動かしています。</p>
-
-                    <div class="p-5 rounded-2xl bg-white border border-slate-200 text-center font-bold text-navy-900 space-y-1 shadow-2xs my-4 text-sm sm:text-base">
-                        <p>自分で解く</p>
-                        <p class="text-slate-400">↓</p>
-                        <p>復習する</p>
-                    </div>
-
-                    <p>これを、毎日コツコツと続けています。</p>
-                    <p>実際のところ、人並みの学習量では成績は上がらないのです。<br>また、“与えられる学び”だけでは本質的な力は身につきません。</p>
-                    <p>授業の有無に関わらず、重要なのは主体的に取り組んでいるかどうかであり、教材は特別でなくても身近にいくらでもあります。この行動の積み重ねが、最終的な差につながるのです。</p>
-
-                    <div class="p-6 rounded-2xl bg-navy-50/80 border border-navy-200 text-navy-900 font-bold space-y-2 my-4 leading-relaxed">
-                        <p>「自学自習ができるのは、勉強ができるから」ではありません。</p>
-                        <p>「勉強ができるのは、自学自習ができるから」です。</p>
-                        <p class="pt-2">つまり、目標にすべきは―<br>「自学自習ができるようになること」なのです。</p>
-                    </div>
-
-                    <p class="text-right font-bold text-navy-900 pt-2">
-                        GAKU道 馬場
-                    </p>
-                </div>
-            </article>
+            
+            <!-- 画像12：コラム見開きノート画像（テキストは削除し、画像のみ大きく配置） -->
+            <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-md hover-lift">
+                <img src="column-note.jpg" alt="ちょこっとコラム ノート見開きビジュアル" class="w-full h-auto object-contain mx-auto">
+            </div>
 
         </div>
     </section>
@@ -1012,9 +963,9 @@
                 GAKU道（がくどう）
             </div>
             <div class="flex flex-wrap justify-center gap-6 text-slate-300">
-                <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">プライバシーポリシー</a>
-                <a href="https://jigakujisyu.my.canva.site/act" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">特定商取引法に基づく表記</a>
-                <a href="https://study-search.jp/columns/1045" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Study Searchで紹介されました!</a>
+                <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">プライバシーポリシー</a>
+                <a href="https://jigakujisyu.my.canva.site/act" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">特定商取引法に基づく表記</a>
+                <a href="https://study-search.jp/columns/1045" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">Study Searchで紹介されました!</a>
             </div>
             <p class="text-[11px] text-slate-500 pt-4 border-t border-navy-800">
                 &copy; GAKU道 All Rights Reserved.

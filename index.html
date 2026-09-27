@@ -7,6 +7,9 @@
     <title>GAKU道（がくどう）| 史上最強の自学自習道場で合格をつかみ取れ！</title>
     <meta name="description" content="完全オンライン、学習計画と進捗管理に特化した道場 GAKU道(がくどう)。自分のコトは、自分で決める! 入会金無料! 1週間無料体験実施中!">
 
+    <!-- ファビコン設定 -->
+    <link rel="icon" type="image/png" href="logo.png">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -29,9 +32,9 @@
                         navy: {
                             950: '#0f1722',
                             900: '#152433',
-                            800: '#243d57', /* 基準ディープネイビー */
+                            800: '#243d57',
                             700: '#345373',
-                            600: '#4e7191', /* スレートブルー */
+                            600: '#4e7191',
                             100: '#e2eaf0',
                             50: '#f0f4f8'
                         }
@@ -91,17 +94,12 @@
 <body class="bg-[#fafdfb]" id="top">
 
     <!-- ==================== ヘッダー ==================== -->
-    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-3.5 transition-all duration-300 shadow-xs">
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 py-2.5 transition-all duration-300 shadow-xs">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
             
-            <a href="#top" class="flex items-center gap-3 hover:opacity-85 transition">
-                <div class="w-10 h-10 rounded-xl bg-navy-800 flex items-center justify-center text-white serif text-xl font-bold shadow-md shadow-navy-800/20">
-                    道
-                </div>
-                <div>
-                    <div class="serif font-extrabold text-2xl tracking-wider text-navy-900 leading-none">GAKU道</div>
-                    <span class="text-[10px] text-navy-600 font-bold tracking-widest block mt-0.5">（がくどう）</span>
-                </div>
+            <!-- ロゴ組み込み -->
+            <a href="#top" class="flex items-center gap-2 hover:opacity-85 transition">
+                <img src="logo.png" alt="GAKU道 ロゴ" class="h-10 md:h-12 w-auto object-contain">
             </a>
 
             <!-- PC用 ナビゲーション -->
@@ -170,12 +168,13 @@
                 </h1>
             </div>
 
-            <div class="space-y-3 pt-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="space-y-4 pt-2" data-aos="fade-up" data-aos-delay="200">
                 <p class="text-base sm:text-lg text-slate-700 font-medium">
                     完全オンライン、学習計画と進捗管理に特化した道場
                 </p>
-                <div class="text-3xl sm:text-4xl font-extrabold serif text-navy-900 tracking-wider">
-                    GAKU道(がくどう)
+                <!-- ロゴ配置 -->
+                <div class="flex justify-center">
+                    <img src="logo.png" alt="GAKU道" class="h-16 md:h-20 w-auto object-contain">
                 </div>
                 <div class="pt-1">
                     <span class="inline-block bg-red-600 text-white text-xs font-bold px-4 py-1 rounded-full shadow-xs">
@@ -184,7 +183,7 @@
                 </div>
             </div>
 
-            <!-- ボタン枠（中途半端な改行を防ぐ十分な幅とwhitespace-nowrap） -->
+            <!-- ボタン枠 -->
             <div class="pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[280px] bg-navy-800 hover:bg-navy-900 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-navy-800/25 hover-lift tracking-widest text-sm flex items-center justify-center gap-2 whitespace-nowrap">
                     <span>お試し! 1週間無料体験 実施中!</span>
@@ -269,10 +268,9 @@
                 </div>
             </div>
 
-            <!-- 画像1：総務省グラフ ＆ 出典（直下に配置） -->
+            <!-- 画像1：総務省グラフ ＆ 出典（直下配置） -->
             <div class="bg-white p-4 sm:p-6 rounded-3xl border border-slate-200 shadow-sm hover-lift space-y-3" data-aos="fade-up" data-aos-delay="100">
                 <img src="graph-net-dependence.png" alt="総務省 令和5年度情報通信メディアの利用時間と情報行動に関する調査 ネット依存傾向者の割合グラフ" class="w-full h-auto object-contain mx-auto rounded-xl">
-                <!-- グラフのすぐ直下に配置 -->
                 <p class="text-xs text-slate-500 text-right font-medium pt-1">
                     出典:総務省「令和5年度情報通信メディアの利用時間と情報行動に関する調査」
                 </p>
@@ -545,7 +543,7 @@
                 </h2>
             </div>
 
-            <!-- 3モード説明（各画像配置） -->
+            <!-- 3モード説明 -->
             <div class="grid md:grid-cols-3 gap-6 text-sm" data-aos="fade-up" data-aos-delay="100">
                 
                 <!-- 仏（画像7） -->
@@ -761,7 +759,7 @@
                 </div>
             </div>
 
-            <!-- 月額料金の無料体験ボタン（改行防止・十分な幅） -->
+            <!-- 月額料金の無料体験ボタン -->
             <div class="text-center pt-2" data-aos="fade-up">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold py-4 px-10 rounded-full shadow-md hover-lift text-base transition border border-yellow-500 tracking-wider whitespace-nowrap">
                     お試し! 1週間無料体験 実施中!
@@ -910,7 +908,7 @@
                 </a>
             </div>
 
-            <!-- 説明会案内（ボタン改行防止） -->
+            <!-- 説明会案内 -->
             <div class="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm text-center space-y-4 hover-lift" data-aos="zoom-in">
                 <h3 class="text-lg sm:text-xl font-bold text-navy-900 serif">GAKU道</h3>
                 <div class="text-xl sm:text-2xl font-extrabold text-navy-900 serif">
@@ -947,7 +945,7 @@
                 </h2>
             </div>
             
-            <!-- 画像12：コラム見開きノート画像（テキストは削除し、画像のみ大きく配置） -->
+            <!-- 画像12：コラム見開きノート画像 -->
             <div class="max-w-3xl mx-auto rounded-3xl overflow-hidden border border-slate-200 shadow-md hover-lift">
                 <img src="column-note.jpg" alt="ちょこっとコラム ノート見開きビジュアル" class="w-full h-auto object-contain mx-auto">
             </div>
@@ -959,8 +957,8 @@
     <!-- ==================== フッター ==================== -->
     <footer class="bg-navy-950 text-slate-400 py-12 px-6 text-center text-xs tracking-wider border-t border-navy-900">
         <div class="max-w-4xl mx-auto space-y-6">
-            <div class="serif text-white text-xl font-bold tracking-widest">
-                GAKU道（がくどう）
+            <div class="flex justify-center">
+                <img src="logo.png" alt="GAKU道" class="h-10 w-auto object-contain brightness-0 invert opacity-80">
             </div>
             <div class="flex flex-wrap justify-center gap-6 text-slate-300">
                 <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">プライバシーポリシー</a>

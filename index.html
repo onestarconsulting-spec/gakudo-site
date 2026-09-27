@@ -88,7 +88,7 @@
             background: linear-gradient(transparent 60%, #fde047 60%);
         }
 
-        /* トップ背景画像設定（画像の透過率を90%に設定して粗さを軽減） */
+        /* トップ背景画像設定（透過率90%で粗さ軽減） */
         .hero-bg {
             position: relative;
             background-color: #f8fafc;
@@ -101,7 +101,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            opacity: 0.9; /* ご指定の90%透明度 */
+            opacity: 0.9;
             z-index: 0;
         }
 
@@ -168,10 +168,10 @@
                 <img src="logo.png" alt="GAKU道 ロゴ" class="h-12 md:h-14 w-auto object-contain">
             </a>
             <div class="flex items-center gap-4">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex text-sm font-bold text-navy-800 hover:text-navy-950 px-3 py-2 transition whitespace-nowrap">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex text-sm font-bold text-navy-800 hover:text-navy-950 px-3 py-2 transition">
                     問い合わせ
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="bg-navy-900 hover:bg-navy-800 text-white px-6 py-2.5 rounded-full font-bold text-sm tracking-wider shadow-md shadow-navy-900/20 hover-lift flex items-center gap-2 whitespace-nowrap">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="bg-navy-900 hover:bg-navy-800 text-white px-5 sm:px-6 py-2.5 rounded-full font-bold text-xs sm:text-sm tracking-wider shadow-md shadow-navy-900/20 hover-lift flex items-center gap-2">
                     <i class="fa-solid fa-calendar-check text-xs"></i>
                     <span>1週間無料体験</span>
                 </a>
@@ -184,16 +184,16 @@
     <section class="hero-bg pt-40 pb-32 px-6 overflow-hidden">
         <div class="relative z-10 max-w-6xl mx-auto text-center space-y-8">
             
-            <div data-aos="fade-down">
-                <span class="inline-block bg-white/95 border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs whitespace-nowrap">
+            <div data-aos="fade-down" class="px-2">
+                <span class="inline-block bg-white/95 border border-navy-600/30 text-navy-900 text-xs sm:text-sm px-4 sm:px-6 py-2 rounded-full font-bold shadow-xs leading-normal">
                     塾でもない、家庭教師でもない、新しい学びの形
                 </span>
             </div>
 
-            <!-- 文字背面の白半透明レイヤー（角は直角） -->
-            <div data-aos="fade-up" data-aos-delay="100" class="text-overlay-bg inline-block px-4 sm:px-16 py-6 shadow-sm w-full sm:w-auto">
-                <h1 class="text-[1.8rem] sm:text-[2.6rem] md:text-6xl font-extrabold text-navy-950 serif leading-snug tracking-tight mb-4 whitespace-nowrap">
-                    自分のコトは、自分で決める!
+            <!-- 文字背面の白半透明レイヤー（角は直角・スマホは幅90%に制限） -->
+            <div data-aos="fade-up" data-aos-delay="100" class="text-overlay-bg inline-block px-4 sm:px-16 py-6 shadow-sm w-[95%] sm:w-auto">
+                <h1 class="text-2xl sm:text-4xl md:text-6xl font-extrabold text-navy-950 serif leading-snug tracking-tight mb-4">
+                    <span class="inline-block">自分のコトは、</span><span class="inline-block">自分で決める!</span>
                 </h1>
                 <p class="text-sm sm:text-xl md:text-2xl text-navy-900 font-bold tracking-wide">
                     <span class="inline-block">完全オンライン、</span><span class="inline-block">学習計画と進捗管理に特化した道場</span>
@@ -202,7 +202,7 @@
 
             <div class="space-y-4 pt-2" data-aos="fade-up" data-aos-delay="200">
                 <div class="flex justify-center py-2">
-                    <img src="logo.png" alt="GAKU道" class="h-20 md:h-24 w-auto object-contain drop-shadow-md">
+                    <img src="logo.png" alt="GAKU道" class="h-16 sm:h-20 md:h-24 w-auto object-contain drop-shadow-md">
                 </div>
                 <div>
                     <span class="inline-block bg-red-600 text-white text-sm font-bold px-6 py-1.5 rounded-full shadow-md">
@@ -211,14 +211,14 @@
                 </div>
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row justify-center items-center gap-5 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[320px] bg-navy-900 hover:bg-navy-800 text-white font-bold py-4.5 px-9 rounded-2xl shadow-lg shadow-navy-900/25 hover-lift tracking-widest text-base flex items-center justify-center gap-2 whitespace-nowrap">
-                    <span>お試し! 1週間無料体験 実施中!</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <div class="pt-8 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto sm:min-w-[320px] bg-navy-900 hover:bg-navy-800 text-white font-bold py-4 px-6 sm:px-9 rounded-2xl shadow-lg shadow-navy-900/25 hover-lift tracking-widest text-sm sm:text-base flex items-center justify-center gap-2">
+                    <span class="text-center">お試し! 1週間無料体験 実施中!</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs shrink-0"></i>
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[260px] bg-white/95 backdrop-blur-md border-2 border-navy-900 hover:bg-navy-50 text-navy-900 font-bold py-4.5 px-9 rounded-2xl shadow-md hover-lift tracking-widest text-base flex items-center justify-center gap-2 whitespace-nowrap">
-                    <i class="fa-regular fa-envelope"></i>
-                    <span>問い合わせはこちら</span>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto sm:min-w-[260px] bg-white/95 backdrop-blur-md border-2 border-navy-900 hover:bg-navy-50 text-navy-900 font-bold py-4 px-6 sm:px-9 rounded-2xl shadow-md hover-lift tracking-widest text-sm sm:text-base flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-envelope shrink-0"></i>
+                    <span class="text-center">問い合わせはこちら</span>
                 </a>
             </div>
         </div>
@@ -284,15 +284,15 @@
             <div class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-xs space-y-5" data-aos="fade-up">
                 <h3 class="font-bold text-xl sm:text-2xl text-navy-950 serif border-b border-slate-100 pb-3">ネット依存がもたらす心の不調</h3>
                 <ul class="space-y-3 text-base sm:text-lg text-slate-700 font-medium pl-2">
-                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600"></span>不安や憂うつ</li>
-                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600"></span>イライラ</li>
-                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600"></span>睡眠不足や生活のリズムの乱れ</li>
+                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600 shrink-0"></span><span>不安や憂うつ</span></li>
+                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600 shrink-0"></span><span>イライラ</span></li>
+                    <li class="flex items-center gap-2.5"><span class="w-2 h-2 rounded-full bg-navy-600 shrink-0"></span><span>睡眠不足や生活のリズムの乱れ</span></li>
                 </ul>
                 <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-medium">
                     <span class="inline-block">この結果、遅刻や欠席が増えたり、</span><span class="inline-block">家族・友人とのトラブルが増加したりします。</span>
                 </p>
                 <div>
-                    <!-- 枠の広がりを防ぎ、文字長にぴったり合わせる最適化 -->
+                    <!-- 枠が横に広がりすぎないように inline-block で内包 -->
                     <div class="inline-block p-6 rounded-2xl bg-rose-50 border-l-8 border-red-600 text-red-700 font-bold text-lg sm:text-xl text-left">
                         <span class="inline-block">そして･･･</span><br><span class="inline-block">学力も低下します。</span>
                     </div>
@@ -342,19 +342,19 @@
                     </div>
                     <div class="space-y-4 text-base sm:text-lg font-bold">
                         <div class="p-5 rounded-2xl bg-navy-800/80 border border-navy-700 flex items-center gap-4 transition hover:bg-navy-700">
-                            <span class="w-8 h-8 rounded-full bg-amber-400 text-navy-950 flex items-center justify-center text-sm">✔</span>
+                            <span class="w-8 h-8 rounded-full bg-amber-400 text-navy-950 flex items-center justify-center text-sm shrink-0">✔</span>
                             <span>1 授業はしない</span>
                         </div>
                         <div class="p-5 rounded-2xl bg-navy-800/80 border border-navy-700 flex items-center gap-4 transition hover:bg-navy-700">
-                            <span class="w-8 h-8 rounded-full bg-amber-400 text-navy-950 flex items-center justify-center text-sm">✔</span>
+                            <span class="w-8 h-8 rounded-full bg-amber-400 text-navy-950 flex items-center justify-center text-sm shrink-0">✔</span>
                             <span>2 教材も計画も自分で決める</span>
                         </div>
                         <div class="p-5 rounded-2xl bg-navy-800/80 border border-navy-700 flex items-center gap-4 transition hover:bg-navy-700">
-                            <span class="w-8 h-8 rounded-full bg-amber-400 text-navy-950 flex items-center justify-center text-sm">✔</span>
+                            <span class="w-8 h-8 rounded-full bg-amber-400 text-navy-950 flex items-center justify-center text-sm shrink-0">✔</span>
                             <span>3 一冊ずつ完璧に仕上げる</span>
                         </div>
                         <div class="p-5 rounded-2xl bg-navy-800/80 border border-navy-700 flex items-center gap-4 transition hover:bg-navy-700">
-                            <span class="w-8 h-8 rounded-full bg-amber-400 text-navy-950 flex items-center justify-center text-sm">✔</span>
+                            <span class="w-8 h-8 rounded-full bg-amber-400 text-navy-950 flex items-center justify-center text-sm shrink-0">✔</span>
                             <span>4 オンラインで毎日報告する</span>
                         </div>
                     </div>
@@ -366,14 +366,14 @@
                     </div>
                     <h3 class="text-3xl sm:text-4xl font-extrabold text-navy-950 serif mb-8">期待効果</h3>
                     <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-base sm:text-lg font-bold text-slate-700">
-                        <li class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800"></span>学習進度の早さ</li>
-                        <li class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800"></span>時間短縮</li>
-                        <li class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800"></span>低コスト</li>
-                        <li class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800"></span>知識定着度の高さ</li>
-                        <li class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800"></span>決断力の向上</li>
-                        <li class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800"></span>自己管理能力の向上</li>
-                        <li class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800"></span>ネット依存脱却</li>
-                        <li class="p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800"></span>親子関係の改善</li>
+                        <li class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800 shrink-0"></span><span>学習進度の早さ</span></li>
+                        <li class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800 shrink-0"></span><span>時間短縮</span></li>
+                        <li class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800 shrink-0"></span><span>低コスト</span></li>
+                        <li class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800 shrink-0"></span><span>知識定着度の高さ</span></li>
+                        <li class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800 shrink-0"></span><span>決断力の向上</span></li>
+                        <li class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800 shrink-0"></span><span>自己管理能力の向上</span></li>
+                        <li class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800 shrink-0"></span><span>ネット依存脱却</span></li>
+                        <li class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center gap-3 transition hover:border-navy-300"><span class="w-2.5 h-2.5 rounded-full bg-navy-800 shrink-0"></span><span>親子関係の改善</span></li>
                     </ul>
                 </div>
             </div>
@@ -686,7 +686,9 @@
                 </div>
             </div>
             <div class="text-center pt-2" data-aos="fade-up">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold py-4.5 px-12 rounded-full shadow-md hover-lift text-lg transition border border-yellow-500 tracking-wider whitespace-nowrap">お試し! 1週間無料体験 実施中!</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold py-4 px-6 sm:px-12 rounded-full shadow-md hover-lift text-base sm:text-lg transition border border-yellow-500 tracking-wider">
+                    お試し! 1週間無料体験 実施中!
+                </a>
             </div>
             <div class="text-sm text-slate-500 space-y-2 pt-4 text-center leading-relaxed" data-aos="fade-up">
                 <p>※小学生は12歳年度末までの児童、中学生以上は高校・大学等の学生や社会人を含む。</p>
@@ -773,7 +775,7 @@
 
             <div class="space-y-3">
                 <div class="text-lg sm:text-2xl font-bold text-navy-950">
-                    GAKU道塾長 <span class="text-red-600 font-extrabold tracking-wider">やればできる!</span>
+                    <span class="inline-block">GAKU道塾長</span> <span class="inline-block text-red-600 font-extrabold tracking-wider">やればできる!</span>
                 </div>
                 <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium pt-1 max-w-2xl mx-auto">
                     <span class="inline-block">戦略策定と実行支援のプロフェッショナルが、</span><span class="inline-block">学生・社会人の自学自習をサポートします。</span><span class="inline-block">独学のノウハウと塾講師・家庭教師としての経験から、</span><span class="inline-block">自学自習のコツを体系化し、</span><span class="inline-block">再現性ある形でみなさまにお伝えしています。</span>
@@ -785,12 +787,16 @@
                 <div class="text-2xl sm:text-4xl font-extrabold text-navy-950 serif">オンライン説明会随時開催!</div>
                 <p class="text-sm text-slate-400 font-bold">※30分程度</p>
                 <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium">
-                    「問い合わせ」より、ご希望の日時を送信ください。<br>
+                    <span class="inline-block">「問い合わせ」より、</span><span class="inline-block">ご希望の日時を送信ください。</span><br>
                     <strong class="text-navy-950 text-lg sm:text-2xl">まずは、お気軽に学習相談から!</strong>
                 </p>
-                <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-5 max-w-xl mx-auto">
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[220px] bg-white border-2 border-navy-900 hover:bg-navy-50 text-navy-900 font-bold py-4 px-8 rounded-xl text-base transition hover-lift whitespace-nowrap">問い合わせ・Q&amp;A</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[220px] bg-navy-900 hover:bg-navy-800 text-white font-bold py-4 px-8 rounded-xl text-base transition shadow-md hover-lift whitespace-nowrap">申し込みはこちら</a>
+                <div class="pt-4 flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto sm:min-w-[220px] bg-white border-2 border-navy-900 hover:bg-navy-50 text-navy-900 font-bold py-4 px-6 rounded-xl text-sm sm:text-base transition hover-lift">
+                        <span class="text-center">問い合わせ・Q&amp;A</span>
+                    </a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTuy3UECogPvl43fOBBcEKwDZQcuNN5lTjRFSc5dFDSafqJw/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto sm:min-w-[220px] bg-navy-900 hover:bg-navy-800 text-white font-bold py-4 px-6 rounded-xl text-sm sm:text-base transition shadow-md hover-lift">
+                        <span class="text-center">申し込みはこちら</span>
+                    </a>
                 </div>
             </div>
 
@@ -817,13 +823,20 @@
         <div class="max-w-5xl mx-auto space-y-10">
             
             <div class="flex justify-center">
+                <!-- 白い枠をなくし、そのままロゴを配置 -->
                 <img src="logo.png" alt="GAKU道" class="h-14 w-auto object-contain">
             </div>
             
-            <div class="flex flex-wrap justify-center gap-8 text-slate-300 font-bold">
-                <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">プライバシーポリシー <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
-                <a href="https://jigakujisyu.my.canva.site/act" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">特定商取引法に基づく表記 <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
-                <a href="https://study-search.jp/columns/1045" target="_blank" rel="noopener noreferrer" class="hover:text-white transition whitespace-nowrap">Study Searchで紹介されました! <i class="fa-solid fa-arrow-up-right-from-square text-[10px] ml-1"></i></a>
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-6 sm:gap-8 text-slate-300 font-bold">
+                <a href="https://cfa82039-fbb7-4507-935e-83f490d3fa3b.filesusr.com/ugd/dad29d_9fb95a0741d84c58bfa57b4638a83d31.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5">
+                    プライバシーポリシー <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+                <a href="https://jigakujisyu.my.canva.site/act" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5">
+                    特定商取引法に基づく表記 <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
+                <a href="https://study-search.jp/columns/1045" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5">
+                    Study Searchで紹介されました! <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                </a>
             </div>
 
             <p class="text-xs text-slate-500 pt-8 border-t border-navy-900">

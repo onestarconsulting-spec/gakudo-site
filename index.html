@@ -8,8 +8,8 @@
     <meta name="description" content="完全オンライン、学習計画と進捗管理に特化した道場 GAKU道(がくどう)。自分のコトは、自分で決める! 入会金無料! 1週間無料体験実施中!">
 
     <!-- ファビコン設定 -->
-    <link rel="icon" type="image/jpeg" sizes="any" href="favicon.jpg?v=2">
-    <link rel="apple-touch-icon" href="favicon.jpg?v=2">
+    <link rel="icon" type="image/jpeg" sizes="any" href="favicon.jpg?v=3">
+    <link rel="apple-touch-icon" href="favicon.jpg?v=3">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -88,6 +88,22 @@
             background: linear-gradient(transparent 60%, #fde047 60%);
         }
 
+        /* トップ背景画像設定 */
+        .hero-bg {
+            background-image: url('hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+        /* 背景画像を薄く見せるための白レイヤー（上85%白 → 下95%白 のグラデーション） */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.95));
+            z-index: 0;
+        }
+
         /* PDCAサイクルの円形レイアウト用 */
         .pdca-circle {
             position: relative;
@@ -117,7 +133,6 @@
         .pdca-c { bottom: 0; left: 50%; transform: translateX(-50%); border-color: #f59e0b; }
         .pdca-a { top: 50%; left: 0; transform: translateY(-50%); border-color: #ef4444; }
         
-        /* PDCAの矢印（背景円） */
         .pdca-arrows {
             position: absolute;
             top: 15%;
@@ -158,28 +173,32 @@
     </header>
 
 
-    <!-- ==================== 1. トップセクション ==================== -->
-    <section class="pt-40 pb-32 px-6 bg-gradient-to-b from-navy-100/60 via-navy-50/30 to-[#f8fafc] border-b border-slate-200/70">
-        <div class="max-w-5xl mx-auto text-center space-y-8">
+    <!-- ==================== 1. トップセクション（背景画像＋白オーバーレイ） ==================== -->
+    <section class="hero-bg pt-40 pb-32 px-6 border-b border-slate-200/70 overflow-hidden">
+        <!-- 白の半透明レイヤー -->
+        <div class="hero-overlay"></div>
+        
+        <!-- コンテンツ（前面に表示するため relative z-10 指定） -->
+        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-8">
             <div data-aos="fade-down">
-                <span class="inline-block bg-white border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs">
+                <span class="inline-block bg-white/90 backdrop-blur-sm border border-navy-600/30 text-navy-900 text-sm px-6 py-2 rounded-full font-bold shadow-xs">
                     塾でもない、家庭教師でもない、新しい学びの形
                 </span>
             </div>
             <div data-aos="fade-up" data-aos-delay="100">
-                <div class="inline-block border-2 border-navy-900 bg-white text-navy-900 text-base font-bold px-6 py-1.5 rounded-lg tracking-widest mb-5 shadow-2xs">
+                <div class="inline-block border-2 border-navy-900 bg-white/90 backdrop-blur-sm text-navy-900 text-base font-bold px-6 py-1.5 rounded-lg tracking-widest mb-5 shadow-2xs">
                     自学自習道場
                 </div>
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-navy-950 serif leading-[1.25] tracking-tight">
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-navy-950 serif leading-[1.25] tracking-tight drop-shadow-sm">
                     自分のコトは、自分で決める!
                 </h1>
             </div>
             <div class="space-y-4 pt-2" data-aos="fade-up" data-aos-delay="200">
-                <p class="text-xl sm:text-2xl text-slate-700 font-medium">
+                <p class="text-xl sm:text-2xl text-slate-800 font-bold drop-shadow-sm">
                     完全オンライン、学習計画と進捗管理に特化した道場
                 </p>
                 <div class="flex justify-center py-2">
-                    <img src="logo.png" alt="GAKU道" class="h-20 md:h-24 w-auto object-contain drop-shadow-xs">
+                    <img src="logo.png" alt="GAKU道" class="h-20 md:h-24 w-auto object-contain drop-shadow-md">
                 </div>
                 <div>
                     <span class="inline-block bg-red-600 text-white text-sm font-bold px-6 py-1.5 rounded-full shadow-md">
@@ -192,7 +211,7 @@
                     <span>お試し! 1週間無料体験 実施中!</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                 </a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[260px] bg-white border-2 border-navy-900 hover:bg-navy-50 text-navy-900 font-bold py-4.5 px-9 rounded-2xl hover-lift tracking-widest text-base flex items-center justify-center gap-2 whitespace-nowrap">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdBvgdtJMSsT-6xASf8nsEHtczAhGeDJKP1qJKp0kjxQgTidg/viewform" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto min-w-[260px] bg-white/95 backdrop-blur-md border-2 border-navy-900 hover:bg-navy-50 text-navy-900 font-bold py-4.5 px-9 rounded-2xl shadow-md hover-lift tracking-widest text-base flex items-center justify-center gap-2 whitespace-nowrap">
                     <i class="fa-regular fa-envelope"></i>
                     <span>問い合わせはこちら</span>
                 </a>
@@ -588,7 +607,7 @@
                 <h2 class="text-3xl sm:text-5xl font-extrabold text-navy-950 serif mb-4">合格実績</h2>
                 <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium">
                     当道場の方針として、公開しておりません。しかし、<br>
-                    <strong class="text-xl sm:text-2xl text-navy-950 font-extrabold marker-yellow px-1">ほぼ全員が、第一志望の合格をつかみ取っています。</strong>
+                    <strong class="text-xl sm:text-2xl text-navy-950 font-extrabold marker-yellow px-1">ほとんどの生徒が、第一志望の合格をつかみ取っています。</strong>
                 </p>
                 <p class="text-sm text-slate-400 mt-3">※詳細は「問い合わせ・Q&amp;A」をご覧下さい。</p>
             </div>
@@ -712,13 +731,14 @@
         <div class="max-w-3xl mx-auto space-y-8 text-center" data-aos="fade-up">
             
             <div class="flex justify-center">
-                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-navy-900 shadow-md bg-white">
+                <!-- 塾長の画像を少し大きく調整 -->
+                <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-2 border-navy-900 shadow-md bg-white">
                     <img src="leader.jpg" alt="GAKU道塾長" class="w-full h-full object-cover">
                 </div>
             </div>
 
             <div class="space-y-3">
-                <div class="text-base sm:text-xl font-bold text-navy-950">
+                <div class="text-lg sm:text-2xl font-bold text-navy-950">
                     GAKU道塾長 <span class="text-red-600 font-extrabold tracking-wider">やればできる!</span>
                 </div>
                 <p class="text-base sm:text-xl text-slate-700 leading-relaxed font-medium pt-1 max-w-2xl mx-auto">
@@ -763,10 +783,8 @@
         <div class="max-w-5xl mx-auto space-y-10">
             
             <div class="flex justify-center">
-                <!-- 白背景の角丸枠に入れてオリジナルのロゴカラーを美しく表示 -->
-                <div class="bg-white/95 px-6 py-3 rounded-2xl inline-block shadow-md">
-                    <img src="logo.png" alt="GAKU道" class="h-12 w-auto object-contain">
-                </div>
+                <!-- 白い枠をなくし、そのままロゴ（logo.png）を配置 -->
+                <img src="logo.png" alt="GAKU道" class="h-14 w-auto object-contain">
             </div>
             
             <div class="flex flex-wrap justify-center gap-8 text-slate-300 font-bold">
